@@ -146,13 +146,14 @@
       margin-bottom: 1.5rem;
       font-weight: 700;
       letter-spacing: -1px;
+      text-align: center;
     }
     .features {
       display: flex;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 2rem 1.2rem; /* gap horizontal 2rem, vertical 1.2rem */
       justify-content: space-between;
-      margin: 2rem 0 0 0;
+      margin: 1.2rem 0 0 0; /* reduz o margin-top */
     }
     .feature {
       flex: 1 1 220px;
@@ -161,7 +162,7 @@
       padding: 1.5rem 1rem 1.2rem 1rem;
       text-align: center;
       box-shadow: 0 2px 12px rgba(44, 62, 80, 0.04);
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.7rem; /* reduzido */
       min-width: 200px;
       position: relative;
     }
@@ -269,7 +270,8 @@
         max-width: 95vw;
       }
       section {
-        padding: 0.7rem 0.2rem;
+        padding: 0.7rem 0.8rem;
+        margin-inline: 0.5rem;
       }
       .feature {
         min-width: 0;
@@ -392,11 +394,11 @@
 
   <footer>
     <div>© Cartão de Visita Digital. Todos os direitos reservados.</div>
-    <div style="margin-top:0.5rem; font-size:0.95em;">
+    <!-- <div style="margin-top:0.5rem; font-size:0.95em;">
       <a href="https://cartaodevisitadigital.com.br/politica-de-privacidade">Política de Privacidade</a>
       &nbsp;|&nbsp;
       <a href="https://cartaodevisitadigital.com.br/fale-conosco">Fale Conosco</a>
-    </div>
+    </div> -->
   </footer>
 </body>
 </html>
