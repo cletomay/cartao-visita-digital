@@ -1,10 +1,10 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html  As informacoes do novo cartao sao:
 
-Nome: Rustipan São Pedro
-Endereço: Av. Atílio Pedro Pagani, 632 - Palhoça, SC, 88132-149
+Nome: 1 2 3 JÁ
+Endereço: R. Monza, 269 - Palhoça, SC, 88132-147
 Google Maps: https://maps.app.goo.gl/oBwNUpFxfjqgt5Te9
-Instagram: rustipansaopedro
-Whatsapp: +55 48 3242-5910
-Cor primária: #dabb68
+Instagram: 123jaoficial
+Whatsapp: +5548991486684
+Cor primária: #ff8f00
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
