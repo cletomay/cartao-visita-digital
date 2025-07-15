@@ -1,404 +1,418 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cartão de Visita Digital</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <style>
-    :root {
-      --hero-bg: #18223a;
-      --primary: #18223a;
-      --primary-action: #3a7bfd;
-      --primary-action-hover: #2560c4;
-      --feature-bg: #f3f5fa;
-      --plan-bg: #f7f8fa;
-      --text-main: #222;
-      --text-light: #f7f7fb;
-      --border-light: #e0e3ea;
-    }
-    html, body {
-      width: 100%;
-      max-width: 100vw;
-      overflow-x: hidden;
-    }
-    body {
-      font-family: 'Montserrat', Arial, sans-serif;
-      margin: 0;
-      background: var(--feature-bg);
-      color: var(--text-main);
-    }
-    /* Container centralizador para header e navbar */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      box-sizing: border-box;
-    }
-    .main-navbar {
-      width: 100%;
-      background: #fff;
-      border-bottom: 1px solid var(--border-light);
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .navbar-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0.7rem 0;
-    }
-    header {
-      background: var(--hero-bg);
-      color: var(--text-light);
-      padding: 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      min-height: 320px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      max-width: 100vw;
-      box-sizing: border-box;
-    }
-    .header-content {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3.5rem 2rem 2.5rem 2rem;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    header img {
-      max-width: 140px;
-      margin-bottom: 1.2rem;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.12));
-    }
-    header h1, header p, header .cta-btn {
-      max-width: 95vw;
-      box-sizing: border-box;
-    }
-    header h1 {
-      font-size: 3.2rem;
-      margin: 0.5rem auto 0.7rem auto;
-      font-weight: 700;
-      letter-spacing: -1px;
-      text-shadow: 0 2px 12px rgba(24,34,58,0.10);
-    }
-    header p {
-      font-size: 1.35rem;
-      margin: 0 auto 2.5rem auto;
-      color: #cfd8e3;
-      max-width: 700px;
-      text-shadow: 0 2px 8px rgba(24,34,58,0.10);
-    }
-    header .cta-btn {
-      background: var(--primary-action);
-      color: #fff;
-      border: none;
-      border-radius: 30px;
-      padding: 1.1rem 2.7rem;
-      font-size: 1.25rem;
-      font-weight: 700;
-      cursor: pointer;
-      margin: 0.5rem auto 0 auto;
-      box-shadow: 0 2px 12px rgba(44,62,80,0.10);
-      transition: background 0.2s, color 0.2s;
-      outline: none;
-      text-decoration: none;
-      display: inline-block;
-      white-space: nowrap;
-      max-width: 100vw;
-    }
-    header .cta-btn:hover {
-      background: var(--primary-action-hover);
-      color: #fff;
-      text-decoration: none;
-    }
-    section {
-      max-width: 1000px;
-      margin: 2.5rem auto;
-      background: var(--plan-bg);
-      border-radius: 20px;
-      box-shadow: 0 4px 32px rgba(44, 62, 80, 0.07);
-      padding: 2.5rem 2rem;
-    }
-    section h2 {
-      color: var(--hero-bg);
-      font-size: 2rem;
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-      letter-spacing: -1px;
-      text-align: center;
-    }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem 1.2rem; /* gap horizontal 2rem, vertical 1.2rem */
-      justify-content: space-between;
-      margin: 1.2rem 0 0 0; /* reduz o margin-top */
-    }
-    .feature {
-      flex: 1 1 220px;
-      background: var(--feature-bg);
-      border-radius: 16px;
-      padding: 1.5rem 1rem 1.2rem 1rem;
-      text-align: center;
-      box-shadow: 0 2px 12px rgba(44, 62, 80, 0.04);
-      margin-bottom: 0.7rem; /* reduzido */
-      min-width: 200px;
-      position: relative;
-    }
-    .feature .icon {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-      display: block;
-      color: var(--primary);
-    }
-    .feature h3 {
-      margin: 0.5rem 0 0.2rem 0;
-      font-size: 1.15rem;
-      color: var(--primary);
-      font-weight: 700;
-    }
-    .feature p {
-      color: #444;
-      font-size: 1.01rem;
-    }
-    footer {
-      background: var(--hero-bg);
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem 1.2rem 1rem;
-      margin-top: 2.5rem;
-      font-size: 1.05rem;
-    }
-    footer a {
-      color: #fff;
-      text-decoration: underline;
-    }
-    @media (max-width: 1200px) {
-      section {
-        max-width: 98vw;
-        padding: 1.5rem 0.5rem;
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5NWFWRWJ1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
-    }
-    @media (max-width: 900px) {
-      .features {
+      gtag('js', new Date());
+
+      gtag('config', 'G-R5NWFWRWJ1');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cartão de Visita Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <style>
+      :root {
+        --hero-bg: #18223a;
+        --primary: #18223a;
+        --primary-action: #3a7bfd;
+        --primary-action-hover: #2560c4;
+        --feature-bg: #f3f5fa;
+        --plan-bg: #f7f8fa;
+        --text-main: #222;
+        --text-light: #f7f7fb;
+        --border-light: #e0e3ea;
+      }
+      html,
+      body {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+      body {
+        font-family: 'Montserrat', Arial, sans-serif;
+        margin: 0;
+        background: var(--feature-bg);
+        color: var(--text-main);
+      }
+      /* Container centralizador para header e navbar */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        box-sizing: border-box;
+      }
+      .main-navbar {
+        width: 100%;
+        background: #fff;
+        border-bottom: 1px solid var(--border-light);
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .navbar-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0.7rem 0;
+      }
+      header {
+        background: var(--hero-bg);
+        color: var(--text-light);
+        padding: 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        min-height: 320px;
+        display: flex;
         flex-direction: column;
-        gap: 1.2rem;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
       }
-      section {
-        padding: 1.2rem 0.5rem;
+      .header-content {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3.5rem 2rem 2.5rem 2rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      header img {
+        max-width: 140px;
+        margin-bottom: 1.2rem;
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.12));
+      }
+      header h1,
+      header p,
+      header .cta-btn {
+        max-width: 95vw;
+        box-sizing: border-box;
       }
       header h1 {
-        font-size: 2.1rem;
+        font-size: 3.2rem;
+        margin: 0.5rem auto 0.7rem auto;
+        font-weight: 700;
+        letter-spacing: -1px;
+        text-shadow: 0 2px 12px rgba(24, 34, 58, 0.1);
       }
       header p {
-        font-size: 1.1rem;
+        font-size: 1.35rem;
+        margin: 0 auto 2.5rem auto;
+        color: #cfd8e3;
+        max-width: 700px;
+        text-shadow: 0 2px 8px rgba(24, 34, 58, 0.1);
       }
-      .main-navbar {
-        flex-direction: column;
-        gap: 0.7rem;
-        padding: 0.7rem 1rem;
-      }
-    }
-    @media (max-width: 600px) {
-      .main-navbar {
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 0.7rem 0.5rem;
-      }
-      .main-navbar .brand {
-        font-size: 1.05rem;
-      }
-      .main-navbar .cta-btn {
+      header .cta-btn {
         background: var(--primary-action);
         color: #fff;
         border: none;
         border-radius: 30px;
-        padding: 0.6rem 1.3rem;
-        font-size: 1rem;
+        padding: 1.1rem 2.7rem;
+        font-size: 1.25rem;
         font-weight: 700;
         cursor: pointer;
-        margin: 0;
-        box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+        margin: 0.5rem auto 0 auto;
+        box-shadow: 0 2px 12px rgba(44, 62, 80, 0.1);
         transition: background 0.2s, color 0.2s;
         outline: none;
         text-decoration: none;
         display: inline-block;
         white-space: nowrap;
-        max-width: 90vw;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        max-width: 100vw;
       }
-      .main-navbar .cta-btn:hover {
+      header .cta-btn:hover {
         background: var(--primary-action-hover);
         color: #fff;
         text-decoration: none;
       }
-      header {
-        padding: 1.5rem 0.2rem 1rem 0.2rem;
-        min-height: 160px;
-      }
-      header h1 {
-        font-size: 1.3rem;
-      }
-      header p {
-        font-size: 0.98rem;
-      }
-      header .cta-btn {
-        font-size: 0.98rem;
-        padding: 0.6rem 1.1rem;
-        max-width: 95vw;
-      }
       section {
-        padding: 0.7rem 0.8rem;
-        margin-inline: 0.5rem;
+        max-width: 1000px;
+        margin: 2.5rem auto;
+        background: var(--plan-bg);
+        border-radius: 20px;
+        box-shadow: 0 4px 32px rgba(44, 62, 80, 0.07);
+        padding: 2.5rem 2rem;
+      }
+      section h2 {
+        color: var(--hero-bg);
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -1px;
+        text-align: center;
+      }
+      .features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem 1.2rem; /* gap horizontal 2rem, vertical 1.2rem */
+        justify-content: space-between;
+        margin: 1.2rem 0 0 0; /* reduz o margin-top */
       }
       .feature {
-        min-width: 0;
-        padding: 1rem 0.3rem 0.8rem 0.3rem;
+        flex: 1 1 220px;
+        background: var(--feature-bg);
+        border-radius: 16px;
+        padding: 1.5rem 1rem 1.2rem 1rem;
+        text-align: center;
+        box-shadow: 0 2px 12px rgba(44, 62, 80, 0.04);
+        margin-bottom: 0.7rem; /* reduzido */
+        min-width: 200px;
+        position: relative;
       }
-      .navbar-content .cta-btn {
-        display: none;
+      .feature .icon {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+        display: block;
+        color: var(--primary);
       }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container header-content">
-      <h1>Seu cartão merece ser lembrado, não descartado</h1>
-      <p>Impressione e crie conexões de valor com um cartão digital fácil de acessar, impossível de esquecer e sempre à mão.</p>
-      <a href="https://wa.me/5548996150445" class="cta-btn">Quero meu cartão</a>
-    </div>
-  </header>
+      .feature h3 {
+        margin: 0.5rem 0 0.2rem 0;
+        font-size: 1.15rem;
+        color: var(--primary);
+        font-weight: 700;
+      }
+      .feature p {
+        color: #444;
+        font-size: 1.01rem;
+      }
+      footer {
+        background: var(--hero-bg);
+        color: #fff;
+        text-align: center;
+        padding: 2rem 1rem 1.2rem 1rem;
+        margin-top: 2.5rem;
+        font-size: 1.05rem;
+      }
+      footer a {
+        color: #fff;
+        text-decoration: underline;
+      }
+      @media (max-width: 1200px) {
+        section {
+          max-width: 98vw;
+          padding: 1.5rem 0.5rem;
+        }
+      }
+      @media (max-width: 900px) {
+        .features {
+          flex-direction: column;
+          gap: 1.2rem;
+        }
+        section {
+          padding: 1.2rem 0.5rem;
+        }
+        header h1 {
+          font-size: 2.1rem;
+        }
+        header p {
+          font-size: 1.1rem;
+        }
+        .main-navbar {
+          flex-direction: column;
+          gap: 0.7rem;
+          padding: 0.7rem 1rem;
+        }
+      }
+      @media (max-width: 600px) {
+        .main-navbar {
+          flex-direction: column;
+          gap: 0.5rem;
+          padding: 0.7rem 0.5rem;
+        }
+        .main-navbar .brand {
+          font-size: 1.05rem;
+        }
+        .main-navbar .cta-btn {
+          background: var(--primary-action);
+          color: #fff;
+          border: none;
+          border-radius: 30px;
+          padding: 0.6rem 1.3rem;
+          font-size: 1rem;
+          font-weight: 700;
+          cursor: pointer;
+          margin: 0;
+          box-shadow: 0 2px 12px rgba(44, 62, 80, 0.1);
+          transition: background 0.2s, color 0.2s;
+          outline: none;
+          text-decoration: none;
+          display: inline-block;
+          white-space: nowrap;
+          max-width: 90vw;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .main-navbar .cta-btn:hover {
+          background: var(--primary-action-hover);
+          color: #fff;
+          text-decoration: none;
+        }
+        header {
+          padding: 1.5rem 0.2rem 1rem 0.2rem;
+          min-height: 160px;
+        }
+        header h1 {
+          font-size: 1.3rem;
+        }
+        header p {
+          font-size: 0.98rem;
+        }
+        header .cta-btn {
+          font-size: 0.98rem;
+          padding: 0.6rem 1.1rem;
+          max-width: 95vw;
+        }
+        section {
+          padding: 0.7rem 0.8rem;
+          margin-inline: 0.5rem;
+        }
+        .feature {
+          min-width: 0;
+          padding: 1rem 0.3rem 0.8rem 0.3rem;
+        }
+        .navbar-content .cta-btn {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-content">
+        <h1>Seu cartão merece ser lembrado, não descartado</h1>
+        <p>Impressione e crie conexões de valor com um cartão digital fácil de acessar, impossível de esquecer e sempre à mão.</p>
+        <a href="https://wa.me/5548996150445" class="cta-btn">Quero meu cartão</a>
+      </div>
+    </header>
 
-  <section id="como-funciona">
-    <h2>O que é o Cartão de Visita Digital?</h2>
-    <p>O Cartão de Visita Digital é uma página online moderna, disponível 24h, com link exclusivo e QR Code para compartilhamento fácil. Reúna todas as suas informações em um só lugar, com funcionalidades pensadas para facilitar e transmitir confiança.</p>
-    <div class="features">
-      <div class="feature">
-        <span class="icon"><i class="bi bi-phone"></i></span>
-        <h3>Contato Rápido</h3>
-        <p>WhatsApp, telefone, redes sociais, e-mail, site, localização e mais.</p>
+    <section id="como-funciona">
+      <h2>O que é o Cartão de Visita Digital?</h2>
+      <p>O Cartão de Visita Digital é uma página online moderna, disponível 24h, com link exclusivo e QR Code para compartilhamento fácil. Reúna todas as suas informações em um só lugar, com funcionalidades pensadas para facilitar e transmitir confiança.</p>
+      <div class="features">
+        <div class="feature">
+          <span class="icon"><i class="bi bi-phone"></i></span>
+          <h3>Contato Rápido</h3>
+          <p>WhatsApp, telefone, redes sociais, e-mail, site, localização e mais.</p>
+        </div>
+        <div class="feature">
+          <span class="icon"><i class="bi bi-shop"></i></span>
+          <h3>Catálogo Digital</h3>
+          <p>Divulgue seus produtos ou serviços com fotos, preços e descrições.</p>
+        </div>
+        <div class="feature">
+          <span class="icon"><i class="bi bi-star-fill"></i></span>
+          <h3>Avaliações</h3>
+          <p>Receba avaliações e conquiste selos de ranking para valorizar sua reputação.</p>
+        </div>
+        <div class="feature">
+          <span class="icon"><i class="bi bi-palette"></i></span>
+          <h3>Personalização</h3>
+          <p>100% personalizado com a identidade visual da sua marca.</p>
+        </div>
       </div>
-      <div class="feature">
-        <span class="icon"><i class="bi bi-shop"></i></span>
-        <h3>Catálogo Digital</h3>
-        <p>Divulgue seus produtos ou serviços com fotos, preços e descrições.</p>
-      </div>
-      <div class="feature">
-        <span class="icon"><i class="bi bi-star-fill"></i></span>
-        <h3>Avaliações</h3>
-        <p>Receba avaliações e conquiste selos de ranking para valorizar sua reputação.</p>
-      </div>
-      <div class="feature">
-        <span class="icon"><i class="bi bi-palette"></i></span>
-        <h3>Personalização</h3>
-        <p>100% personalizado com a identidade visual da sua marca.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Para quem é indicado?</h2>
-    <div class="features">
-      <div class="feature">
-        <span class="icon"><i class="bi bi-person-vcard"></i></span>
-        <h3>Autônomos</h3>
-        <p>Profissionalize sua apresentação e facilite o contato com clientes.</p>
+    <section>
+      <h2>Para quem é indicado?</h2>
+      <div class="features">
+        <div class="feature">
+          <span class="icon"><i class="bi bi-person-vcard"></i></span>
+          <h3>Autônomos</h3>
+          <p>Profissionalize sua apresentação e facilite o contato com clientes.</p>
+        </div>
+        <div class="feature">
+          <span class="icon"><i class="bi bi-people"></i></span>
+          <h3>Colaboradores</h3>
+          <p>Compartilhe informações da empresa de forma rápida e profissional.</p>
+        </div>
+        <div class="feature">
+          <span class="icon"><i class="bi bi-building"></i></span>
+          <h3>Negócios</h3>
+          <p>Valorize sua marca com um cartão digital moderno e acessível.</p>
+        </div>
       </div>
-      <div class="feature">
-        <span class="icon"><i class="bi bi-people"></i></span>
-        <h3>Colaboradores</h3>
-        <p>Compartilhe informações da empresa de forma rápida e profissional.</p>
-      </div>
-      <div class="feature">
-        <span class="icon"><i class="bi bi-building"></i></span>
-        <h3>Negócios</h3>
-        <p>Valorize sua marca com um cartão digital moderno e acessível.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Benefícios do Cartão Digital</h2>
-    <div class="features">
-      <div class="feature">
-        <span class="icon"><i class="bi bi-rocket"></i></span>
-        <h3>Visibilidade</h3>
-        <p>Compartilhe seu cartão por link ou QR Code e permita instalação como app.</p>
+    <section>
+      <h2>Benefícios do Cartão Digital</h2>
+      <div class="features">
+        <div class="feature">
+          <span class="icon"><i class="bi bi-rocket"></i></span>
+          <h3>Visibilidade</h3>
+          <p>Compartilhe seu cartão por link ou QR Code e permita instalação como app.</p>
+        </div>
+        <div class="feature">
+          <span class="icon"><i class="bi bi-piggy-bank"></i></span>
+          <h3>Economia</h3>
+          <p>Atualize seus dados a qualquer momento, sem custos adicionais.</p>
+        </div>
+        <div class="feature">
+          <span class="icon"><i class="bi bi-briefcase"></i></span>
+          <h3>Mais Vendas</h3>
+          <p>Apresente seus produtos/serviços em um catálogo digital profissional.</p>
+        </div>
+        <div class="feature">
+          <span class="icon"><i class="bi bi-shield-check"></i></span>
+          <h3>Confiança</h3>
+          <p>Transmita credibilidade com avaliações e selos de ranking.</p>
+        </div>
       </div>
-      <div class="feature">
-        <span class="icon"><i class="bi bi-piggy-bank"></i></span>
-        <h3>Economia</h3>
-        <p>Atualize seus dados a qualquer momento, sem custos adicionais.</p>
-      </div>
-      <div class="feature">
-        <span class="icon"><i class="bi bi-briefcase"></i></span>
-        <h3>Mais Vendas</h3>
-        <p>Apresente seus produtos/serviços em um catálogo digital profissional.</p>
-      </div>
-      <div class="feature">
-        <span class="icon"><i class="bi bi-shield-check"></i></span>
-        <h3>Confiança</h3>
-        <p>Transmita credibilidade com avaliações e selos de ranking.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Perguntas Frequentes</h2>
-    <div class="features">
-      <div class="feature">
-        <span class="icon"><i class="bi bi-question-circle"></i></span>
-        <h3>O que é cartão de visita digital?</h3>
-        <p>É uma página online personalizada, com todas as suas informações e fácil de compartilhar.</p>
+    <section>
+      <h2>Perguntas Frequentes</h2>
+      <div class="features">
+        <div class="feature">
+          <span class="icon"><i class="bi bi-question-circle"></i></span>
+          <h3>O que é cartão de visita digital?</h3>
+          <p>É uma página online personalizada, com todas as suas informações e fácil de compartilhar.</p>
+        </div>
+        <div class="feature">
+          <span class="icon"><i class="bi bi-list-task"></i></span>
+          <h3>Quais informações posso incluir?</h3>
+          <p>Contatos, redes sociais, catálogo, avaliações, localização, horários e muito mais.</p>
+        </div>
+        <div class="feature">
+          <span class="icon"><i class="bi bi-phone"></i></span>
+          <h3>Preciso de um app para usar?</h3>
+          <p>Não, basta acessar pelo navegador. Pode ser instalado como atalho no celular.</p>
+        </div>
+        <div class="feature">
+          <span class="icon"><i class="bi bi-link-45deg"></i></span>
+          <h3>Como envio o cartão?</h3>
+          <p>Compartilhe o link ou QR Code por WhatsApp, redes sociais ou materiais impressos.</p>
+        </div>
       </div>
-      <div class="feature">
-        <span class="icon"><i class="bi bi-list-task"></i></span>
-        <h3>Quais informações posso incluir?</h3>
-        <p>Contatos, redes sociais, catálogo, avaliações, localização, horários e muito mais.</p>
-      </div>
-      <div class="feature">
-        <span class="icon"><i class="bi bi-phone"></i></span>
-        <h3>Preciso de um app para usar?</h3>
-        <p>Não, basta acessar pelo navegador. Pode ser instalado como atalho no celular.</p>
-      </div>
-      <div class="feature">
-        <span class="icon"><i class="bi bi-link-45deg"></i></span>
-        <h3>Como envio o cartão?</h3>
-        <p>Compartilhe o link ou QR Code por WhatsApp, redes sociais ou materiais impressos.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <div>© Cartão de Visita Digital. Todos os direitos reservados.</div>
-    <!-- <div style="margin-top:0.5rem; font-size:0.95em;">
+    <footer>
+      <div>© Cartão de Visita Digital. Todos os direitos reservados.</div>
+      <!-- <div style="margin-top:0.5rem; font-size:0.95em;">
       <a href="https://cartaodevisitadigital.com.br/politica-de-privacidade">Política de Privacidade</a>
       &nbsp;|&nbsp;
       <a href="https://cartaodevisitadigital.com.br/fale-conosco">Fale Conosco</a>
     </div> -->
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
