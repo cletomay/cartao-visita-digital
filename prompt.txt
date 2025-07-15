@@ -1,8 +1,10 @@
-Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
+Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html  As informacoes do novo cartao sao:
 
-Nome: Silva Bebidas
-Endereço: AV das tipuanas 996, Palhoça 88136300
-Google Maps: https://maps.app.goo.gl/ESn5QLqfHyE3vZeT7
-Instagram: silvabebidas
-Whatsapp: +55 4832869717
-Cor primária: #000
+Nome: Rustipan São Pedro
+Endereço: Av. Atílio Pedro Pagani, 632 - Palhoça, SC, 88132-149
+Google Maps: https://maps.app.goo.gl/oBwNUpFxfjqgt5Te9
+Instagram: rustipansaopedro
+Whatsapp: +55 48 3242-5910
+Cor primária: #dabb68
+
+Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
