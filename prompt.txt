@@ -1,11 +1,11 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
 
-Nome: Lovi's Hot Dog
-Endereço: Rua da Pedra, 347 Pedra Branca / Palhoça
-Google Maps: https://maps.app.goo.gl/EZ7yS9vcj9EozKzw8
-Instagram: lovishotdog
-Ifood: https://l.instagram.com/?u=https%3A%2F%2Fwww.ifood.com.br%2Fdelivery%2Fpalhoca-sc%2Flovis-hot-dog-pedra-branca%2F70160e72-9374-4cbb-b3e7-eb5c4ca43042%3Futm_medium%3Dshare%26fbclid%3DPAZXh0bgNhZW0CMTEAAad_Q4dxmS_8sI_J2Q3v_4BXqHVCemBX6Z1EDsv6A3gSJXfs7jeWbHCPHD11dQ_aem_EPlUKty0C4_9IXobNUygfQ&e=AT1h-iKZO-_DmbsHtgNQlf-NFrWRuLyv6UliXNhzjLZOJiERPH3nJqplhMDG89dbI2lt_GlXTgxlETvkIXQj2mp9CdnszJUr57Qt7GzRE12YVzmUqSDzkw
-Cor primária: #90252b
+Nome: Speed Informática e Celulares
+Endereço: AV. Elza Lucchi, N°1344 Bairro: - Pte. do Imaruim, Palhoça - SC, 88130-600
+Google Maps: https://maps.app.goo.gl/7SdtTNeoMoAMQnYE7
+Instagram: speed.informatica
+Whatsapp: +5548999114989
+Cor primária: #f31417
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
 
