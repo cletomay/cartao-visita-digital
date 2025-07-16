@@ -60,4 +60,10 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://www.cartao-visita-digital.com/academia-aquarius/</loc>
+        <lastmod>2025-07-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>

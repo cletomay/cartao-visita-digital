@@ -1,10 +1,12 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
 
-Nome: Clínica Veterinária Disk Cão
-Endereço: R. Cap. Augusto Vidal, 3535 - Centro, Palhoça - SC, 88131-050
-Google Maps: https://maps.app.goo.gl/k949QgR3BbQCwekj7
-Instagram: diskcao
-Whatsapp: +54899729496
-Cor primária: #009901
+Nome: Academia Aquarius
+Endereço: R. Armando Siegel, 159 - Pte. do Imaruim, Palhoça - SC, 88130-485
+Google Maps: https://maps.app.goo.gl/FCf9PvtmaWYifFpR7
+Instagram: academiaaquariusnatacao
+Whatsapp: +5548988036162
+Cor primária: #1a4770
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
+
+Também atualize o sitemap.xml.
