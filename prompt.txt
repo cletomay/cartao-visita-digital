@@ -1,11 +1,11 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
 
-Nome: Speed Informática e Celulares
-Endereço: AV. Elza Lucchi, N°1344 Bairro: - Pte. do Imaruim, Palhoça - SC, 88130-600
-Google Maps: https://maps.app.goo.gl/7SdtTNeoMoAMQnYE7
-Instagram: speed.informatica
-Whatsapp: +5548999114989
-Cor primária: #f31417
+Nome: J Motos e Bikes
+Endereço: Av. Elza Lucchi, 137 - sala 2 - Pte. do Imaruim, Palhoça - SC, 88130-600
+Google Maps: https://maps.app.goo.gl/vv9Sz8oFv3dTWZZ68
+Instagram: jmotos.bikes
+Whatsapp: +5548991767193
+Cor primária: #d91334
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
 
