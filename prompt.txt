@@ -1,11 +1,11 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
 
-Nome: J Motos e Bikes
-Endereço: Av. Elza Lucchi, 137 - sala 2 - Pte. do Imaruim, Palhoça - SC, 88130-600
-Google Maps: https://maps.app.goo.gl/vv9Sz8oFv3dTWZZ68
-Instagram: jmotos.bikes
-Whatsapp: +5548991767193
-Cor primária: #d91334
+Nome: Espaço Memorar
+Endereço: R. Cláudio Coutinho, 16 - Pte. do Imaruim, Palhoça - SC, 88130-450
+Google Maps: https://maps.app.goo.gl/HeCYSGysbTAsRPaDA
+Instagram: espacomemorar
+Whatsapp: +5548999101359
+Cor primária: #7d4924
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
 

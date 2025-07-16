@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5NWFWRWJ1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-R5NWFWRWJ1');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cartão de Visita - Espaço Memorar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #ffffff;
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 40px 20px;
+      }
+      .link-in-bio-container {
+        max-width: 350px;
+        width: 100%;
+        background: #f8f9fa;
+        border-radius: 25px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        position: relative;
+        padding-bottom: 0;
+        overflow: hidden;
+      }
+      .header-bg {
+        height: 100px;
+        background-color: #7d4924;
+      }
+      .profile-section {
+        margin-top: -50px;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+      .profile-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #ffffff;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      }
+      .profile-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        color: #2c2c2c;
+      }
+      .job-title {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 2px;
+      }
+      .company-name {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #7d4924;
+        margin-bottom: 20px;
+      }
+      .links-container {
+        padding: 0 30px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 8px 0;
+        width: 100%;
+        max-width: 300px;
+        padding: 12px 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background-color: transparent;
+        border: 2px solid #252424;
+        color: #252424;
+      }
+      .btn-link:hover {
+        background-color: #7d4924; /* Cor primária */
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+      .btn-link i {
+        margin-right: 10px;
+        font-size: 1.1rem;
+      }
+      .footer {
+        background-color: #7d4924;
+        padding: 20px;
+        text-align: center;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="link-in-bio-container">
+      <div class="header-bg"></div>
+      <div class="profile-section">
+        <img src="profile.jpg" alt="Foto de Espaço Memorar" class="profile-img" />
+        <h1 class="profile-name">Espaço Memorar</h1>
+        <p class="job-title">R. Cláudio Coutinho, 16 - Pte. do Imaruim, Palhoça - SC, 88130-450</p>
+      </div>
+      <div class="links-container">
+        <a href="https://wa.me/5548999101359" class="btn-link">
+          <i class="bi bi-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+        <a href="https://instagram.com/espacomemorar" class="btn-link">
+          <i class="bi bi-instagram"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="https://maps.app.goo.gl/HeCYSGysbTAsRPaDA" class="btn-link">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>Localização</span>
+        </a>
+      </div>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>
