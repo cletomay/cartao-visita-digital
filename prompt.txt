@@ -1,11 +1,11 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
 
-Nome: Padaria & Confeitaria Doce Sabor
-Endereço: Rua Joinville, 603 - Jardim Aquarius, Palhoça - SC, 88133-220
-Google Maps: https://maps.app.goo.gl/4JhZHtxSWC5nWrdg7
-Instagram: https://www.instagram.com/padariadocesaborr/
-Whatsapp: 5548998292210
-Cor primária: #916d21
+Nome: Padaria e Confeitaria Patricia Santos
+Endereço: R. Padre João Batista Réus, 1600 - Caminho Novo, Palhoça - SC, 88132-300
+Google Maps: https://maps.app.goo.gl/BwH7oKLcfcNwNFvK8
+Instagram: https://www.instagram.com/padaria_patricia_santos/
+Whatsapp: 55 (48) 991116280 e 55 (48) 984196280
+Cor primária: #fc2000
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
 
