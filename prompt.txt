@@ -1,10 +1,11 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
 
-Nome: Padaria Oliveira Casa de Pães
-Endereço: R. Ver. Jacob Knabben da Silva, 2873, Palhoça 88132-015
-Google Maps: https://maps.app.goo.gl/cuqSvm87w5qkiKjh6
-Instagram: https://www.instagram.com/oliveiracasadepaes_
-Cor primária: #010101
+Nome: Panificadora Confeitaria Café Vó Inês
+Endereço: R. Santa Helena, 198 - Vila Lucas Araujo, Passo Fundo - RS, 99074-410
+Google Maps: https://maps.app.goo.gl/VEdNmp321aDmuQ6Z7
+Instagram: https://www.instagram.com/padaria.vovo.ines/
+Cor primária: #9d433a
+Whatsapp: 555431981056
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
 
