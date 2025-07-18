@@ -1,11 +1,11 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
 
-Nome: Padaria e Confeitaria Patricia Santos
-Endereço: R. Padre João Batista Réus, 1600 - Caminho Novo, Palhoça - SC, 88132-300
-Google Maps: https://maps.app.goo.gl/BwH7oKLcfcNwNFvK8
-Instagram: https://www.instagram.com/padaria_patricia_santos/
-Whatsapp: 55 (48) 991116280 e 55 (48) 984196280
-Cor primária: #fc2000
+Nome: Café, Padaria e Confeitaria Ki-Delícia
+Endereço: Av. Bom Jesus de Nazaré, 1891 - Aririu, Palhoça - SC, 88135-101
+Google Maps: https://maps.app.goo.gl/my7T3uapFhjdGwVw6
+Instagram: https://www.instagram.com/kideliciaapadaria/
+Whatsapp: Aririú (+55 48 99103-3788) Pedra Branca (+55 48 99206-3935)
+Cor primária: #f7b2ab
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
 

@@ -144,4 +144,10 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://www.cartao-visita-digital.com/cafe-padaria-kidelicia/</loc>
+        <lastmod>2025-07-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
