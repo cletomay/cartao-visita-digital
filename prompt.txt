@@ -1,11 +1,12 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
 
-Nome: Espaço Memorar
-Endereço: R. Cláudio Coutinho, 16 - Pte. do Imaruim, Palhoça - SC, 88130-450
-Google Maps: https://maps.app.goo.gl/HeCYSGysbTAsRPaDA
-Instagram: espacomemorar
-Whatsapp: +5548999101359
-Cor primária: #7d4924
+Nome: Telhas Catarinense
+Endereço: Av. Cláudio Zacchi, 65 - Passa Vinte, Palhoça - SC, 88132-060
+Google Maps: https://maps.app.goo.gl/8hfFQhZkCSLcpm5F6
+Instagram: telhascatarinense
+Whatsapp: +5548999610671
+Facebook: telhascatarinense
+Cor primária: #dac633
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
 
