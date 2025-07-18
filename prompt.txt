@@ -1,12 +1,11 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
 
-Nome: Telhas Catarinense
-Endereço: Av. Cláudio Zacchi, 65 - Passa Vinte, Palhoça - SC, 88132-060
-Google Maps: https://maps.app.goo.gl/8hfFQhZkCSLcpm5F6
-Instagram: telhascatarinense
-Whatsapp: +5548999610671
-Facebook: telhascatarinense
-Cor primária: #dac633
+Nome: CrossFit ILLUSTRIS Palhoça
+Endereço: R. Marabá, 88 - Passa Vinte, Palhoça - SC, 88133-010
+Google Maps: https://maps.app.goo.gl/1RgfSqrF1gxU3FTr6
+Instagram: https://www.instagram.com/crossfitillustrispalhoca/
+Whatsapp: https://wa.me/5548999208717
+Cor primária: #8a7603
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
 
