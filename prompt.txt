@@ -1,10 +1,10 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
 
-Nome: Pão & Prosa Padaria
-Endereço: Av. Pedra Branca - Cidade Universitária Pedra Branca, Palhoça - SC
-Google Maps: https://maps.app.goo.gl/cyxUEzYRffr1QrYU8
-Instagram: https://www.instagram.com/paoeprosapadaria
-Cor primária: #fae7ad
+Nome: Padaria Oliveira Casa de Pães
+Endereço: R. Ver. Jacob Knabben da Silva, 2873, Palhoça 88132-015
+Google Maps: https://maps.app.goo.gl/cuqSvm87w5qkiKjh6
+Instagram: https://www.instagram.com/oliveiracasadepaes_
+Cor primária: #010101
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
 
