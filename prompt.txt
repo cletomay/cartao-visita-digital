@@ -1,12 +1,11 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
 
-Nome: Matheus Pães e Doces
-Endereço: Rua: Marino Jorge dos Santos,115 - São Sebastião, Palhoça 88136200
-Google Maps: https://maps.app.goo.gl/dfqVFLT6QMifjXeQ6
-Instagram: https://www.instagram.com/matheuspaes_edoces/
-Whatsapp: +55 48 3065-2220
-Ifood: https://www.ifood.com.br/delivery/palhoca-sc/matheus-paes-e-doces---madri-sao-sebastiao
-Cor primária: #1f1315
+Nome: Padaria Lucchi'pan
+Endereço: Av. Elza Lucchi, 657 - Pte. do Imaruim, Palhoça - SC, 88130-600
+Google Maps: https://maps.app.goo.gl/pez3Hc5ZK6jxwAmt5
+Instagram: https://www.instagram.com/panificadora_lucchipan/
+Whatsapp: +554899237720
+Cor primária: #491e17
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
 
