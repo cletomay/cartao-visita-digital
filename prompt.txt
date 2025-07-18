@@ -1,14 +1,14 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
 
-Nome: Padaria Lucchi'pan
-Endereço: Av. Elza Lucchi, 657 - Pte. do Imaruim, Palhoça - SC, 88130-600
-Google Maps: https://maps.app.goo.gl/pez3Hc5ZK6jxwAmt5
-Instagram: https://www.instagram.com/panificadora_lucchipan/
-Whatsapp: +554899237720
-Cor primária: #491e17
+Nome: Panificadora e Confeitaria Pico Do Pão
+Endereço: R. Germano Spricigo, 575 - Caminho Novo, Palhoça - SC, 88132-400
+Google Maps: https://maps.app.goo.gl/3hNjBK6vMRMAyTi16
+Instagram: https://www.instagram.com/panificadorapicodopao/
+Whatsapp: +5548996325851
+Cor primária: #ab683e
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
 
-Também atualize o sitemap.xml.
+Também atualize o sitemap.xml adicionando o novo diretorio criado.
 
-Também altere o arquivo msg.txt.
+Também altere o arquivo msg.txt com o link correto para o novo diretorio.
