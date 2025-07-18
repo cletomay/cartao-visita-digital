@@ -1,11 +1,11 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
 
-Nome: Panificadora e Confeitaria Vó Odilia
-Endereço: R. Gov. Pedro Ivo Campos, 159 - Jardim Eldorado, Palhoça - SC, 88133-580
-Google Maps: https://maps.app.goo.gl/SRHrqy8qz5Wv34Js7
-Instagram: https://www.instagram.com/padariavoodilia/
-Whatsapp: 554899999428
-Cor primária: #89112d
+Nome: Padaria & Confeitaria Doce Sabor
+Endereço: Rua Joinville, 603 - Jardim Aquarius, Palhoça - SC, 88133-220
+Google Maps: https://maps.app.goo.gl/4JhZHtxSWC5nWrdg7
+Instagram: https://www.instagram.com/padariadocesaborr/
+Whatsapp: 5548998292210
+Cor primária: #916d21
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
 
