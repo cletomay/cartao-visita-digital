@@ -1,12 +1,15 @@
 Crie uma pasta com o codigo para o cartao de visita inspirado nos cartoes ja criados #file:index.html. As informacoes do novo cartao sao:
 
-Nome: Café, Padaria e Confeitaria Ki-Delícia
-Endereço: Av. Bom Jesus de Nazaré, 1891 - Aririu, Palhoça - SC, 88135-101
-Google Maps: https://maps.app.goo.gl/my7T3uapFhjdGwVw6
-Instagram: https://www.instagram.com/kideliciaapadaria/
-Whatsapp: Aririú (+55 48 99103-3788) Pedra Branca (+55 48 99206-3935)
-Cor primária: #f7b2ab
+Nome: Matheus Pães e Doces
+Endereço: Rua: Marino Jorge dos Santos,115 - São Sebastião, Palhoça 88136200
+Google Maps: https://maps.app.goo.gl/dfqVFLT6QMifjXeQ6
+Instagram: https://www.instagram.com/matheuspaes_edoces/
+Whatsapp: +55 48 3065-2220
+Ifood: https://www.ifood.com.br/delivery/palhoca-sc/matheus-paes-e-doces---madri-sao-sebastiao
+Cor primária: #1f1315
 
 Suponha que tenha uma imagem profile.jpg no diretorio criado, no futuro colocarei a logo lá.
 
 Também atualize o sitemap.xml.
+
+Também altere o arquivo msg.txt.
