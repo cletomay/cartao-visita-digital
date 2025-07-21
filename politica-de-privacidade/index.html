@@ -37,10 +37,6 @@
         color: var(--text-main);
       }
       .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         max-width: 1200px;
         margin: 0 auto;
         width: 100%;
@@ -101,20 +97,27 @@
         text-decoration: underline;
       }
       .back-link {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        font-size: 1.5rem;
-        text-decoration: none;
+        display: inline-block;
+        margin-right: 1rem;
         color: var(--text-light);
+        text-decoration: none;
+        font-size: 2rem;
       }
     </style>
   </head>
   <body>
     <header>
-      <div class="container" >
-        <a href="../index.html" class="back-link" style="margin-right: 1rem;">
-          <i style="margin-left: 1rem;" class="bi bi-arrow-left"></i> 
+      <div
+        class="container"
+        style="
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <a href="../index.html" class="back-link" style="margin-right: 1rem">
+          <i class="bi bi-arrow-left"></i>
         </a>
         <h1>Política de Privacidade</h1>
       </div>
@@ -132,14 +135,6 @@
         serviço, você concorda com a coleta e uso de informações de acordo com
         esta Política de Privacidade.
       </p>
-      <p>
-        A Política de Privacidade completa esta disponivel no link:
-        <a
-          href="https://www.privacypolicies.com/live/fb2a5f4f-33d4-44b8-84b7-4d7aa103a5a3"
-          target="_blank"
-          >Política de Privacidade</a
-        >.
-      </p>
     </section>
 
     <section>
@@ -154,18 +149,11 @@
       <p>Para os propósitos desta Política de Privacidade:</p>
       <ul>
         <li>
-          <strong>Conta</strong>: significa uma conta única criada para você
-          acessar nosso serviço ou partes dele.
-        </li>
-        <li>
           <strong>Afiliado</strong>: significa uma entidade que controla, é
           controlada por ou está sob controle comum com uma parte.
         </li>
         <li><strong>Empresa</strong>: refere-se à Cartão de Visita Digital.</li>
-        <li>
-          <strong>Cookies</strong>: são pequenos arquivos colocados em seu
-          dispositivo por um site.
-        </li>
+
         <li><strong>País</strong>: refere-se ao Brasil.</li>
         <li>
           <strong>Dispositivo</strong>: significa qualquer dispositivo que possa
@@ -182,8 +170,8 @@
         </li>
         <li>
           <strong>Serviço de Mídia Social de Terceiros</strong>: refere-se a
-          qualquer site ou rede social através do qual um usuário pode fazer
-          login ou criar uma conta para usar o serviço.
+          qualquer site ou rede social através do qual um usuário pode acessar o
+          serviço.
         </li>
         <li>
           <strong>Dados de Uso</strong>: refere-se aos dados coletados
@@ -261,6 +249,79 @@
         usar, compartilhar e armazená-los de maneira consistente com esta
         Política de Privacidade.
       </p>
+
+      <h3>Uso de Seus Dados Pessoais</h3>
+      <p>A empresa pode usar dados pessoais para os seguintes propósitos:</p>
+      <ul>
+        <li>
+          Para fornecer e manter nosso serviço, incluindo monitorar o uso do
+          nosso serviço.
+        </li>
+
+        <li>
+          Para entrar em contato com você: por e-mail, chamadas telefônicas, SMS
+          ou outras formas equivalentes de comunicação eletrônica.
+        </li>
+        <li>
+          Para fornecer notícias, ofertas especiais e informações gerais sobre
+          outros bens, serviços e eventos que oferecemos.
+        </li>
+      </ul>
+
+      <h3>Retenção de Seus Dados Pessoais</h3>
+      <p>
+        A empresa reterá seus dados pessoais apenas pelo tempo necessário para
+        os propósitos estabelecidos nesta Política de Privacidade.
+      </p>
+
+      <h3>Transferência de Seus Dados Pessoais</h3>
+      <p>
+        Suas informações, incluindo dados pessoais, são processadas nos
+        escritórios operacionais da empresa e em qualquer outro lugar onde as
+        partes envolvidas no processamento estejam localizadas.
+      </p>
+
+      <h3>Exclusão de Seus Dados Pessoais</h3>
+      <p>
+        Você tem o direito de excluir ou solicitar que ajudemos na exclusão dos
+        dados pessoais que coletamos sobre você.
+      </p>
+
+      <h3>Divulgação de Seus Dados Pessoais</h3>
+      <p>
+        Em certas circunstâncias, a empresa pode ser obrigada a divulgar seus
+        dados pessoais.
+      </p>
+
+      <h3>Segurança de Seus Dados Pessoais</h3>
+      <p>
+        A segurança de seus dados pessoais é importante para nós, mas lembre-se
+        de que nenhum método de transmissão pela Internet ou método de
+        armazenamento eletrônico é 100% seguro.
+      </p>
+
+      <h3>Privacidade Infantil</h3>
+      <p>Nosso serviço não se destina a menores de 13 anos.</p>
+
+      <h3>Links para Outros Sites</h3>
+      <p>
+        Nosso serviço pode conter links para outros sites que não são operados
+        por nós.
+      </p>
+
+      <h3>Entre em Contato Conosco</h3>
+      <p>
+        Se você tiver alguma dúvida sobre esta Política de Privacidade, pode nos
+        contatar:
+      </p>
+      <ul>
+        <li>
+          Visitando esta página em nosso site:
+          <a href="https://cartaovisitadigital.com.br/"
+            >https://cartaovisitadigital.com.br/</a
+          >
+        </li>
+      </ul>
     </section>
 
     <footer>
