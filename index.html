@@ -240,6 +240,10 @@
         padding: 2rem 1rem 1.2rem 1rem;
         margin-top: 2.5rem;
         font-size: 1.05rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
       }
       footer a {
         color: #fff;
@@ -333,6 +337,15 @@
         }
       }
       @media (max-width: 600px) {
+        footer {
+          flex-direction: column !important;
+          align-items: center !important;
+        }
+
+        footer img {
+          margin-bottom: 1rem !important;
+        }
+
         footer div:last-child {
           display: none;
         }
@@ -492,7 +505,7 @@
       </div>
     </section>
 
-    <footer style="display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+    <footer >
       <img src="assets/logo_recortada_1500.png" alt="Logo" style="max-width: 140px;">
       <div style="text-align: center;">
         © Cartão de Visita Digital. <br />
