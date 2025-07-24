@@ -111,6 +111,7 @@
         height: 200px;
         object-fit: cover;
         display: block;
+        cursor: pointer;
       }
       .reviews {
         display: flex;
@@ -245,7 +246,7 @@
           <p>Pães artesanais, bolos, salgados e muito mais.</p>
         </div>
         <div class="card">
-          <i class="bi bi-wine"></i>
+          <i class="bi bi-cup"></i>
           <h4>Adega</h4>
           <p>Vinhos selecionados para momentos especiais.</p>
         </div>
@@ -276,11 +277,89 @@
     <section class="section">
       <h3>Fotos do local</h3>
       <div class="photos">
-        <div class="photo"><img src="img1.webp" alt="Foto 1" /></div>
-        <div class="photo"><img src="img2.webp" alt="Foto 2" /></div>
-        <div class="photo"><img src="img3.webp" alt="Foto 3" /></div>
+        <div class="photo">
+          <img src="img1.webp" alt="Foto 1" onclick="openModal(this.src)" />
+        </div>
+        <div class="photo">
+          <img src="img2.webp" alt="Foto 2" onclick="openModal(this.src)" />
+        </div>
+        <div class="photo">
+          <img src="img3.webp" alt="Foto 3" onclick="openModal(this.src)" />
+        </div>
       </div>
     </section>
+
+    <section class="section">
+      <h3>Contato</h3>
+      <div class="cards">
+        <a class="card" href="https://wa.me/554832425910" style="text-decoration:none;">
+          <i class="bi bi-whatsapp"></i>
+          <h4 style="color:var(--primary);">(48) 3242-5910</h4>
+        </a>
+        <a class="card" href="https://instagram.com/rustipansaopedro" style="text-decoration:none;">
+          <i class="bi bi-instagram"></i>
+          <h4 style="color:var(--primary);">@rustipansaopedro</h4>
+        </a>
+      </div>
+    </section>
+
+    <div
+      id="modalZoom"
+      style="
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <span
+        onclick="closeModal()"
+        style="
+          position: absolute;
+          top: 30px;
+          right: 40px;
+          font-size: 2.5rem;
+          color: #fff;
+          cursor: pointer;
+          font-family: sans-serif;
+        "
+        >&times;</span
+      >
+      <img
+        id="modalImg"
+        src=""
+        style="
+          max-width: 90vw;
+          max-height: 80vh;
+          border-radius: 12px;
+          box-shadow: 0 2px 20px #000;
+        "
+      />
+    </div>
+    <script>
+      function openModal(src) {
+        document.getElementById("modalImg").src = src;
+        document.getElementById("modalZoom").style.display = "flex";
+      }
+      function closeModal() {
+        document.getElementById("modalZoom").style.display = "none";
+        document.getElementById("modalImg").src = "";
+      }
+      document
+        .getElementById("modalZoom")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeModal();
+        });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeModal();
+      });
+    </script>
 
     <section class="testimonials">
       <h2>O que dizem nossos clientes</h2>
