@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <script
       async
@@ -7,189 +7,389 @@
       crossorigin="anonymous"
     ></script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5NWFWRWJ1"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-R5NWFWRWJ1"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag('js', new Date());
+      gtag("js", new Date());
 
-      gtag('config', 'G-R5NWFWRWJ1');
+      gtag("config", "G-R5NWFWRWJ1");
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cartão de Visita - Lovi's Hot Dog</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <title>Lovi's Hot Dog</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      :root {
+        --primary: #90252b;
+        --text: #2c2c2c;
+      }
       body {
-        background-color: #ffffff;
-        font-family: 'Poppins', sans-serif;
-        color: #333;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        color: var(--text);
+      }
+      header {
+        background: var(--primary);
+        padding: 20px;
         display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 40px 20px;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
       }
-      .link-in-bio-container {
-        max-width: 350px;
-        width: 100%;
-        background: #f8f9fa;
-        border-radius: 25px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        position: relative;
-        padding-bottom: 0;
-        overflow: hidden;
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
       }
-      .header-bg {
-        height: 100px;
-        background-color: #90252b;
-      }
-      .profile-section {
-        margin-top: -50px;
-        position: relative;
-        z-index: 2;
-        text-align: center;
-      }
-      .profile-img {
-        width: 100px;
-        height: 100px;
+      .header-left img {
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         object-fit: cover;
-        border: 5px solid #ffffff;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
       }
-      .profile-name {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.8rem;
-        margin-top: 15px;
-        margin-bottom: 5px;
-        color: #2c2c2c;
+      header h1 {
+        font-family: "Playfair Display", serif;
+        margin: 0;
+        font-size: 1.5rem;
+        color: #fff;
       }
-      .job-title {
-        font-size: 0.9rem;
-        color: #555;
-        margin-bottom: 2px;
-      }
-      .company-name {
-        font-size: 0.8rem;
-        font-weight: 500;
-        color: #90252b;
-        margin-bottom: 20px;
-      }
-      .links-container {
-        padding: 0 30px;
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .btn-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 8px 0;
-        width: 100%;
-        max-width: 300px;
-        padding: 12px 20px;
-        font-size: 0.8rem;
-        font-weight: 500;
+      header .links a {
+        margin-left: 15px;
+        color: #fff;
         text-decoration: none;
-        border-radius: 50px;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        background-color: transparent;
-        border: 2px solid #252424;
-        color: #252424;
+        font-size: 1.2rem;
       }
-      .btn-link:hover {
-        background-color: #90252b; /* Cor primária */
-        color: #ffffff;
-        transform: translateY(-2px);
+      .hero {
+        height: 400px;
+        overflow: hidden;
       }
-      .btn-link i {
-        margin-right: 10px;
-        font-size: 1.1rem;
+      .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
       }
-      .footer {
-        background-color: #90252b;
+      .section {
+        padding: 50px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+      .section h3 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 1.8rem;
+        color: var(--primary);
+      }
+      .photos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+      .photo {
+        flex: 1 1 300px;
+        max-width: 300px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .photo img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+      }
+      footer {
+        background-color: var(--primary);
         padding: 20px;
         text-align: center;
         margin-top: 30px;
+        color: #fff;
       }
-      .business-info {
+      iframe.map {
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        border: none;
+      }
+      #modalZoom {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+      }
+      #modalZoom span {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        font-size: 2.5rem;
+        color: #fff;
+        cursor: pointer;
+        font-family: sans-serif;
+      }
+      #modalZoom img {
+        max-width: 90vw;
+        max-height: 80vh;
+        border-radius: 12px;
+        box-shadow: 0 2px 20px #000;
+      }
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .card {
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 280px;
         text-align: center;
-        margin-top: 10px;
+        transition: transform 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .card i {
+        font-size: 2rem;
+        color: var(--primary);
         margin-bottom: 10px;
       }
-      .business-info h4 {
-        font-size: 1rem;
-        margin-bottom: 5px;
-        color: #90252b;
-      }
-      .business-info p {
-        font-size: 0.9rem;
-        margin-bottom: 10px;
-        color: #555;
+      .card h4 {
+        color: var(--primary);
+        margin: 10px 0 0;
       }
       .adsense-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         margin-top: 20px;
+      }
+      .testimonials {
+        background: #f9f9f9;
+        padding: 50px 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+      }
+      .testimonials h2 {
         text-align: center;
+        margin-bottom: 30px;
+        font-size: 1.8rem;
+        color: var(--primary);
+      }
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      .testimonial {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+      .testimonial:hover {
+        transform: translateY(-5px);
+      }
+      .testimonial p {
+        font-style: italic;
+        margin: 0 0 10px;
+        color: #555;
+      }
+      .testimonial span {
+        display: block;
+        text-align: right;
+        font-weight: bold;
+        color: var(--primary);
       }
     </style>
   </head>
   <body>
-    <div class="container-principal">
-      <div class="link-in-bio-container">
-        <div class="header-bg"></div>
-        <div class="profile-section">
-          <img src="profile.jpg" alt="Foto de Lovi's Hot Dog" class="profile-img" />
-          <h1 class="profile-name">Lovi's Hot Dog</h1>
-          <div class="business-info">
-            <div class="margin-bottom">
-              <p>O momento mais gostoso do rolê</p>
-            </div>
-
-            <div class="margin-bottom">
-              <h4>Serviços ou produtos oferecidos</h4>
-              <p>Hot dogs gourmet e delivery</p>
-            </div>
-
-            <div class="margin-bottom">
-              <h4>Horário de funcionamento</h4>
-              <p>ter - dom: 12:00 - 23:00</p>
-            </div>
-          </div>
-          <p class="job-title">Rua da Pedra, 347 Pedra Branca / Palhoça</p>
-        </div>
-        <div class="links-container">
-          <a href="https://instagram.com/lovishotdog" class="btn-link">
-            <i class="bi bi-instagram"></i>
-            <span>Instagram</span>
-          </a>
-          <a href="https://maps.app.goo.gl/EZ7yS9vcj9EozKzw8" class="btn-link">
-            <i class="bi bi-geo-alt-fill"></i>
-            <span>Localização</span>
-          </a>
-          <a href="https://l.instagram.com/?u=https%3A%2F%2Fwww.ifood.com.br%2Fdelivery%2Fpalhoca-sc%2Flovis-hot-dog-pedra-branca%2F70160e72-9374-4cbb-b3e7-eb5c4ca43042%3Futm_medium%3Dshare%26fbclid%3DPAZXh0bgNhZW0CMTEAAad_Q4dxmS_8sI_J2Q3v_4BXqHVCemBX6Z1EDsv6A3gSJXfs7jeWbHCPHD11dQ_aem_EPlUKty0C4_9IXobNUygfQ&e=AT1h-iKZO-_DmbsHtgNQlf-NFrWRuLyv6UliXNhzjLZOJiERPH3nJqplhMDG89dbI2lt_GlXTgxlETvkIXQj2mp9CdnszJUr57Qt7GzRE12YVzmUqSDzkw" class="btn-link">
-            <i class="bi bi-cart"></i>
-            <span>Ifood</span>
-          </a>
-        </div>
-        <footer class="footer"></footer>
+    <header>
+      <div class="header-left">
+        <img src="profile.jpg" alt="Foto de Lovi's Hot Dog" />
+        <h1>Lovi's Hot Dog</h1>
       </div>
+      <div class="links">
+        <a href="https://instagram.com/lovishotdog"><i class="bi bi-instagram"></i></a>
+        <a href="https://maps.app.goo.gl/EZ7yS9vcj9EozKzw8"><i class="bi bi-geo-alt-fill"></i></a>
+        <a href="https://www.ifood.com.br/delivery/palhoca-sc/lovis-hot-dog-pedra-branca"><i class="bi bi-cart"></i></a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <img src="hero.jpg" alt="Hero Image" />
+    </section>
+
+    <section class="section">
+      <h3>Sobre Lovi's Hot Dog</h3>
+      <p style="text-align: center">
+        Bem-vindo ao Lovi's Hot Dog, onde servimos os melhores hot dogs da região!
+      </p>
+    </section>
+
+    <section class="section">
+      <h3>Fotos do local</h3>
+      <div class="photos">
+        <div class="photo">
+          <img src="img1.jpg" alt="Foto 1" onclick="openModal(this.src)" />
+        </div>
+        <div class="photo">
+          <img src="img2.jpg" alt="Foto 2" onclick="openModal(this.src)" />
+        </div>
+        <div class="photo">
+          <img src="img3.jpg" alt="Foto 3" onclick="openModal(this.src)" />
+        </div>
+      </div>
+    </section>
+
+    <div id="modalZoom">
+      <span onclick="closeModal()">&times;</span>
+      <img id="modalImg" src="" />
+    </div>
+
+    <script>
+      function openModal(src) {
+        document.getElementById("modalImg").src = src;
+        document.getElementById("modalZoom").style.display = "flex";
+      }
+      function closeModal() {
+        document.getElementById("modalZoom").style.display = "none";
+        document.getElementById("modalImg").src = "";
+      }
+      document
+        .getElementById("modalZoom")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeModal();
+        });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeModal();
+      });
+    </script>
+
+    <section class="section">
+      <h3>Localização</h3>
+      <p style="text-align: center">
+        Visite-nos no endereço abaixo:
+      </p>
+      <iframe
+        class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d591.022604245792!2d-48.67831826334214!3d-27.622277052827926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95273509ca1d3a7b%3A0x122d4806d6a77d0c!2sLovi&#39;s%20Hot%20Dog!5e0!3m2!1sen!2sbr!4v1753448011127!5m2!1sen!2sbr"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </section>
+
+    <section class="testimonials">
+      <h2>O que dizem nossos clientes</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <p>
+            “Lovi's Hot Dog é uma excelente opção para quem busca um sabor diferenciado na Pedra Branca. Com um cardápio que vai além do tradicional, o lugar oferece hot dogs inovadores, com ingredientes frescos e combinações ousadas que agradam a todos.”
+          </p>
+          <span>— Daniel Xavier</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Fui sem muita expectativa experimentar e que grande surpresa! (Em torno de 30 reais os lanches).”
+          </p>
+          <span>— Gabriela Westphal</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Ambiente aconchegante, ótima opção para bater um papo, se descontrair e aproveitar a paisagem. Colaboradores são muito prestativos e atenciosos, cuidam de cada detalhe para oferecer uma ótima experiência. Com certeza recomendo e retornarei mais vezes.”
+          </p>
+          <span>— Luan Santos</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Conhecemos pelo Floripa em Dobro e nos surpreendemos. O lanche é muito gostoso, pedimos batata e estava uma delícia. Valeu a pena.”
+          </p>
+          <span>— Sheila Pacheco</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Ontem jantei no local, e fui muito bem atendido pelo pessoal e a comida estava muito boa! Recomendo demais os hotdogs, o sorvete e também o camarão empanado… está tudo muito bom! Retornarei com certeza!”
+          </p>
+          <span>— Ramon de Sousa</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Nota 10 com estrelinhas. ✨ Confesso que cheguei sem muitas expectativas e saí surpreendida!”
+          </p>
+          <span>— Franciny Wagner</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Experiência muito positiva. Local bem organizado, bem decorado, bonito e agradável. Equipe de atendimento alinhada e esforçada pra transmitir conforto aos clientes.”
+          </p>
+          <span>— Paulo' Cajá</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Cachorro quente muito gostoso e com ingredientes de qualidade. Pedimos o hotdog tradicional, custou R$22,00 cada.”
+          </p>
+          <span>— ANNA LUIZA RIBEIRO</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Cachorro-quente delicioso, com produtos de qualidade. Ambiente bem aconchegante e bom atendimento.”
+          </p>
+          <span>— VIC tv</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Contato</h3>
+      <div class="cards">
+        <a class="card" href="https://instagram.com/lovishotdog" style="text-decoration:none;">
+          <i class="bi bi-instagram"></i>
+          <h4 style="color:var(--primary);">Instagram</h4>
+        </a>
+        <a class="card" href="https://maps.app.goo.gl/EZ7yS9vcj9EozKzw8" style="text-decoration:none;">
+          <i class="bi bi-geo-alt-fill"></i>
+          <h4 style="color:var(--primary);">Localização</h4>
+        </a>
+        <a class="card" href="https://www.ifood.com.br/delivery/palhoca-sc/lovis-hot-dog-pedra-branca" style="text-decoration:none;">
+          <i class="bi bi-cart"></i>
+          <h4 style="color:var(--primary);">Ifood</h4>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="adsense-container">
+        <!-- AdSense -->
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2727171811005381"
           crossorigin="anonymous"
         ></script>
-        <!-- anuncio-horizontal -->
         <ins
           class="adsbygoogle"
           style="display: block"
@@ -202,6 +402,12 @@
           (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
       </div>
-    </div>
+    </section>
+
+    
+
+    <footer>
+      <p>&copy; 2025 Lovi's Hot Dog. Todos os direitos reservados.</p>
+    </footer>
   </body>
 </html>
