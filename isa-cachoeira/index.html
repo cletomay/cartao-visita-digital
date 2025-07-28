@@ -1,144 +1,466 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2727171811005381"
+      crossorigin="anonymous"
+    ></script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5NWFWRWJ1"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-R5NWFWRWJ1"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag('js', new Date());
-
-      gtag('config', 'G-R5NWFWRWJ1');
+      gtag("js", new Date());
+      gtag("config", "G-R5NWFWRWJ1");
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cartão de Visita - Isa Cachoeira</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+    <title>Isa Cachoeira - Consultoria e Desenvolvimento Pessoal</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <style>
+      :root {
+        --primary: #e67e22;
+        --text: #2c2c2c;
+      }
       body {
-        background: rgba(183, 75, 37, 0.2); /* Cor primária com 50% de transparência */
-        font-family: 'Poppins', sans-serif;
-        color: #333;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        color: var(--text);
+      }
+      header {
+        background: var(--primary);
+        padding: 20px;
         display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 40px 20px;
-        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
       }
-      .link-in-bio-container {
-        max-width: 350px;
-        width: 100%;
-        background: #f8f9fa;
-        border-radius: 25px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        position: relative;
-        padding-bottom: 0;
-        overflow: hidden;
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
       }
-      .header-bg {
-        height: 100px;
-        background-color: #b74b25;
-      }
-      .profile-section {
-        margin-top: -50px;
-        position: relative;
-        z-index: 2;
-        text-align: center;
-      }
-      .profile-img {
-        width: 100px;
-        height: 100px;
+      .header-left img {
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         object-fit: cover;
-        border: 5px solid #ffffff;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
       }
-      .profile-name {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.8rem;
-        margin-top: 15px;
-        margin-bottom: 5px;
-        color: #2c2c2c;
+      header h1 {
+        font-family: "Playfair Display", serif;
+        margin: 0;
+        font-size: 1.5rem;
+        color: #fff;
       }
-      .job-title {
-        font-size: 0.9rem;
-        color: #555;
-        margin-bottom: 2px;
-      }
-      .company-name {
-        font-size: 0.8rem;
-        font-weight: 500;
-        color: #b74b25;
-        margin-bottom: 20px;
-      }
-      .links-container {
-        padding: 0 30px;
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .btn-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 8px 0;
-        width: 100%;
-        max-width: 300px;
-        padding: 12px 20px;
-        font-size: 0.8rem;
-        font-weight: 500;
+      header .links a {
+        margin-left: 15px;
+        color: #fff;
         text-decoration: none;
-        border-radius: 50px;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        background-color: transparent;
-        border: 2px solid #252424;
-        color: #252424;
+        font-size: 1.2rem;
       }
-      .btn-link:hover {
-        background-color: #b74b25; /* Cor primária */
-        color: #ffffff;
-        transform: translateY(-2px);
+      .hero {
+        height: 400px;
+        overflow: hidden;
       }
-      .btn-link i {
-        margin-right: 10px;
-        font-size: 1.1rem;
+      .hero img {
+        width: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+        height: 100%;
+        max-height: 400px;
+        display: block;
       }
-      .footer {
-        background-color: #b74b25;
-        padding: 20px;
+      .section {
+        padding: 50px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+      .section h3 {
         text-align: center;
-        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 1.8rem;
+        color: var(--primary);
+      }
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .card {
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 280px;
+        text-align: center;
+        transition: box-shadow 0.2s;
+      }
+      .card:hover {
+        box-shadow: 0 4px 20px rgba(230, 126, 34, 0.15);
+      }
+      .card i {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+      .photos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+      .photo {
+        flex: 1 1 300px;
+        max-width: 300px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .photo img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+      }
+      .testimonials {
+        padding: 60px 20px;
+        background-color: #fdfdfd;
+        text-align: center;
+      }
+      .testimonials h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+        color: #444;
+      }
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .testimonial {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        text-align: left;
+      }
+      .testimonial p {
+        font-style: italic;
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .testimonial span {
+        font-weight: bold;
+        color: #777;
+        font-size: 0.9rem;
+      }
+      iframe.map {
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        border: none;
+      }
+      footer {
+        background: var(--primary);
+        color: #fff;
+        text-align: center;
+        padding: 2rem 1rem 1.2rem 1rem;
+        margin-top: 2.5rem;
+        font-size: 1.05rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+      footer a {
+        color: #fff;
+        text-decoration: underline;
+      }
+      @media (max-width: 600px) {
+        footer {
+          flex-direction: column !important;
+          align-items: center !important;
+        }
+        footer img {
+          margin-bottom: 1rem !important;
+        }
+        footer div:last-child {
+          display: none;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="link-in-bio-container">
-      <div class="header-bg"></div>
-      <div class="profile-section">
-        <img src="profile.jpg" alt="Foto de Isa Cachoeira" class="profile-img" />
-        <h1 class="profile-name">Isa Cachoeira</h1>
-        <p class="job-title">Arquitetura e Urbanismo | Design de Interiores</p>
+    <header>
+      <div class="header-left">
+        <img src="profile.jpg" alt="Logo Isa Cachoeira" />
+        <h1>Isa Cachoeira</h1>
       </div>
-      <div class="links-container">
-        <a href="https://instagram.com/arquitetaisacachoeira" class="btn-link">
+      <div class="links">
+        <a href="https://wa.me/554899888888"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://www.instagram.com/isacachoeira/"><i class="bi bi-instagram"></i></a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <img
+        src="profile.jpg"
+        alt="Foto de Isa Cachoeira"
+        style="width: 100%; border-radius: 12px"
+      />
+    </section>
+
+    <section class="section">
+      <h3>Sobre</h3>
+      <p style="text-align: center">
+        Consultoria e desenvolvimento pessoal para transformar vidas. Coaching, palestras e workshops para seu crescimento e autoconhecimento.
+      </p>
+    </section>
+
+    <section class="section">
+      <h3>O que ofereço</h3>
+      <div class="cards">
+        <div class="card">
+          <i class="bi bi-person-badge"></i>
+          <h4>Coaching</h4>
+          <p>Processos personalizados para desenvolvimento pessoal e profissional.</p>
+        </div>
+        <div class="card">
+          <i class="bi bi-mic"></i>
+          <h4>Palestras</h4>
+          <p>Conteúdo inspirador para equipes, empresas e eventos.</p>
+        </div>
+        <div class="card">
+          <i class="bi bi-easel"></i>
+          <h4>Workshops</h4>
+          <p>Vivências práticas para autoconhecimento e evolução.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Para quem é</h3>
+      <div class="cards">
+        <div class="card">
+          <i class="bi bi-people-fill"></i>
+          <h4>Pessoas em busca de mudança</h4>
+          <p>Quem deseja evoluir, superar desafios e alcançar objetivos.</p>
+        </div>
+        <div class="card">
+          <i class="bi bi-briefcase"></i>
+          <h4>Empresas e equipes</h4>
+          <p>Organizações que investem no desenvolvimento humano.</p>
+        </div>
+        <div class="card">
+          <i class="bi bi-stars"></i>
+          <h4>Profissionais</h4>
+          <p>Quem busca crescimento na carreira e equilíbrio pessoal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Fotos</h3>
+      <div class="photos">
+        <div class="photo">
+          <img src="profile.jpg" alt="Foto 1" onclick="openModal(this.src)" />
+        </div>
+        <div class="photo">
+          <img src="profile.jpg" alt="Foto 2" onclick="openModal(this.src)" />
+        </div>
+        <div class="photo">
+          <img src="profile.jpg" alt="Foto 3" onclick="openModal(this.src)" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Contato</h3>
+      <div class="cards">
+        <a class="card" href="https://wa.me/554899888888" style="text-decoration:none;">
+          <i class="bi bi-whatsapp"></i>
+          <h4 style="color:var(--primary);">(48) 99888-8888</h4>
+        </a>
+        <a class="card" href="https://www.instagram.com/isacachoeira/" style="text-decoration:none;">
           <i class="bi bi-instagram"></i>
-          <span>Instagram</span>
-        </a>
-        <a href="https://www.tiktok.com/@arquitetaisacachoeira" class="btn-link">
-          <i class="bi bi-tiktok"></i>
-          <span>TikTok</span>
+          <h4 style="color:var(--primary);">@isacachoeira</h4>
         </a>
       </div>
-      <footer class="footer"></footer>
+    </section>
+
+    <div
+      id="modalZoom"
+      style="
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <span
+        onclick="closeModal()"
+        style="
+          position: absolute;
+          top: 30px;
+          right: 40px;
+          font-size: 2.5rem;
+          color: #fff;
+          cursor: pointer;
+          font-family: sans-serif;
+        "
+        >&times;</span
+      >
+      <img
+        id="modalImg"
+        src=""
+        style="
+          max-width: 90vw;
+          max-height: 80vh;
+          border-radius: 12px;
+          box-shadow: 0 2px 20px #000;
+        "
+      />
     </div>
+    <script>
+      function openModal(src) {
+        document.getElementById("modalImg").src = src;
+        document.getElementById("modalZoom").style.display = "flex";
+      }
+      function closeModal() {
+        document.getElementById("modalZoom").style.display = "none";
+        document.getElementById("modalImg").src = "";
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("modalZoom").addEventListener("click", function (e) {
+          if (e.target === this) closeModal();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") closeModal();
+        });
+      });
+    </script>
+
+    <section class="testimonials">
+      <h2>O que dizem meus clientes</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <p>
+            “A Isa me ajudou a enxergar novas possibilidades na minha vida!”
+          </p>
+          <span>— Juliana S.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “As palestras são inspiradoras e transformadoras.”
+          </p>
+          <span>— Ricardo M.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “O coaching foi fundamental para meu crescimento profissional.”
+          </p>
+          <span>— Fernanda L.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Recomendo para quem busca autoconhecimento.”
+          </p>
+          <span>— Carlos P.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “A Isa tem uma energia contagiante!”
+          </p>
+          <span>— Beatriz F.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Mudou minha forma de pensar e agir.”
+          </p>
+          <span>— Lucas D.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Excelente profissional, recomendo!”
+          </p>
+          <span>— Camila R.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Localização</h3>
+      <p style="text-align: center">
+        R. das Águas, 456 - Centro, Palhoça - SC, 88130-001
+      </p>
+      <iframe
+        class="map"
+        src="https://www.google.com/maps?q=R.+das+Águas,+456+-+Centro,+Palhoça+-+SC,+88130-001&output=embed"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </section>
+
+    <section class="section">
+      <div class="adsense-container">
+        <!-- AdSense -->
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2727171811005381"
+          crossorigin="anonymous"
+        ></script>
+        <ins
+          class="adsbygoogle"
+          style="display: block"
+          data-ad-client="ca-pub-2727171811005381"
+          data-ad-slot="4151101568"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    </section>
+
+    <footer>
+      <a href="../index.html">
+        <img
+          src="../assets/logo_recortada_1500.png"
+          alt="Logo"
+          style="max-width: 140px"
+        />
+      </a>
+      <div style="text-align: center">
+        © Cartão de Visita Digital. <br />
+        Todos os direitos reservados.
+      </div>
+      <div style="width: 140px"></div>
+    </footer>
   </body>
 </html>

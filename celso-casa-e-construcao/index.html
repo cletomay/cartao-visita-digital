@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
   <head>
     <script
       async
@@ -17,209 +17,434 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-R5NWFWRWJ1");
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cartão de Visita - Celso Casa e Construção</title>
+    <title>Celso Casa e Construção - Materiais e Ferramentas em Palhoça</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <style>
+      :root {
+        --primary: #065f1f;
+        --text: #2c2c2c;
+      }
       body {
-        background-color: #ffffff;
+        margin: 0;
         font-family: "Poppins", sans-serif;
-        color: #333;
+        color: var(--text);
+      }
+      header {
+        background: var(--primary);
+        padding: 20px;
         display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 40px 20px;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
       }
-      .link-in-bio-container {
-        max-width: 350px;
-        width: 100%;
-        background: #f8f9fa;
-        border-radius: 25px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        position: relative;
-        padding-bottom: 0;
-        overflow: hidden;
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
       }
-      .header-bg {
-        height: 100px;
-        background-color: #065f1f;
-      }
-      .profile-section {
-        margin-top: -50px;
-        position: relative;
-        z-index: 2;
-        text-align: center;
-      }
-      .profile-img {
-        width: 100px;
-        height: 100px;
+      .header-left img {
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         object-fit: cover;
-        border: 5px solid #ffffff;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
       }
-      .profile-name {
+      header h1 {
         font-family: "Playfair Display", serif;
-        font-size: 1.8rem;
-        margin-top: 15px;
-        margin-bottom: 5px;
-        color: #2c2c2c;
+        margin: 0;
+        font-size: 1.5rem;
+        color: #fff;
       }
-      .job-title {
-        font-size: 0.9rem;
-        color: #555;
-        margin-bottom: 2px;
-      }
-      .company-name {
-        font-size: 0.8rem;
-        font-weight: 500;
-        color: #065f1f;
-        margin-bottom: 20px;
-      }
-      .links-container {
-        padding: 0 30px;
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .btn-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 8px 0;
-        width: 100%;
-        max-width: 300px;
-        padding: 12px 20px;
-        font-size: 0.8rem;
-        font-weight: 500;
+      header .links a {
+        margin-left: 15px;
+        color: #fff;
         text-decoration: none;
-        border-radius: 50px;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        background-color: transparent;
-        border: 2px solid #252424;
-        color: #252424;
+        font-size: 1.2rem;
       }
-      .btn-link:hover {
-        background-color: #065f1f; /* Cor primária */
-        color: #ffffff;
-        transform: translateY(-2px);
+      .hero {
+        height: 400px;
+        overflow: hidden;
       }
-      .btn-link i {
-        margin-right: 10px;
-        font-size: 1.1rem;
+      .hero img {
+        width: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+        height: 100%;
+        max-height: 400px;
+        display: block;
       }
-      .footer {
-        background-color: #065f1f;
-        padding: 20px;
+      .section {
+        padding: 50px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+      .section h3 {
         text-align: center;
-        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 1.8rem;
+        color: var(--primary);
       }
-
-      .business-info p {
-        font-size: 1rem;
-        color: #555;
-        margin: 0;
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
       }
-
-      .business-info h4 {
-        margin: 0;
+      .card {
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 280px;
+        text-align: center;
+        transition: box-shadow 0.2s;
       }
-
-      .margin-bottom {
+      .card:hover {
+        box-shadow: 0 4px 20px rgba(6, 95, 31, 0.15);
+      }
+      .card i {
+        font-size: 2rem;
+        color: var(--primary);
         margin-bottom: 10px;
       }
-      .adsense-container {
-        margin-top: 20px;
-        width: 100%;
-      }
-      .container-principal {
+      .photos {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+      .photo {
+        flex: 1 1 300px;
+        max-width: 300px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .photo img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+      }
+      .testimonials {
+        padding: 60px 20px;
+        background-color: #fdfdfd;
+        text-align: center;
+      }
+      .testimonials h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+        color: #444;
+      }
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .testimonial {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        text-align: left;
+      }
+      .testimonial p {
+        font-style: italic;
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .testimonial span {
+        font-weight: bold;
+        color: #777;
+        font-size: 0.9rem;
+      }
+      iframe.map {
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        border: none;
+      }
+      footer {
+        background: var(--primary);
+        color: #fff;
+        text-align: center;
+        padding: 2rem 1rem 1.2rem 1rem;
+        margin-top: 2.5rem;
+        font-size: 1.05rem;
+        display: flex;
+        flex-direction: row;
         align-items: center;
-        margin-bottom: 30px;
+        justify-content: space-between;
+      }
+      footer a {
+        color: #fff;
+        text-decoration: underline;
+      }
+      @media (max-width: 600px) {
+        footer {
+          flex-direction: column !important;
+          align-items: center !important;
+        }
+        footer img {
+          margin-bottom: 1rem !important;
+        }
+        footer div:last-child {
+          display: none;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="container-principal">
-      <div class="link-in-bio-container">
-        <div class="header-bg"></div>
-        <div class="profile-section">
-          <img
-            src="profile.jpg"
-            alt="Foto de Celso Casa e Construção"
-            class="profile-img"
-          />
-          <h1 class="profile-name">Celso Casa e Construção</h1>
-          <div class="business-info">
-            <div class="margin-bottom">
-              <p>Tudo para sua obra está aqui! ▫️Since 2005</p>
-            </div>
-
-            <div class="margin-bottom">
-              <h4>Serviços ou produtos oferecidos</h4>
-              <p>Materiais de Construção e Ferramentas</p>
-            </div>
-
-            <div class="margin-bottom">
-              <h4>Horário de funcionamento</h4>
-              <p>seg - sex: 07:30 - 12:00, 13:30 - 18:00<br />sab: 07:30 - 12:00</p>
-            </div>
-          </div>
-          <p class="job-title">
-            Av. Atílio Pedro Pagani, 1950 - Passa Vinte, Palhoça - SC, 88132-149
-          </p>
-        </div>
-        <div class="links-container">
-          <a href="https://wa.me/5548999238448" class="btn-link">
-            <i class="bi bi-whatsapp"></i>
-            <span>WhatsApp</span>
-          </a>
-          <a
-            href="https://instagram.com/celsocasaeconstrucao"
-            class="btn-link"
-          >
-            <i class="bi bi-instagram"></i>
-            <span>Instagram</span>
-          </a>
-          <a
-            href="https://maps.app.goo.gl/e2TWvayHDw8oCJ8dA"
-            class="btn-link"
-          >
-            <i class="bi bi-geo-alt-fill"></i>
-            <span>Localização</span>
-          </a>
-          <a href="tel:04832429733" class="btn-link">
-            <i class="bi bi-telephone-fill"></i>
-            <span>Telefone</span>
-          </a>
-        </div>
-        <footer class="footer"></footer>
+    <header>
+      <div class="header-left">
+        <img src="profile.jpg" alt="Logo Celso Casa e Construção" />
+        <h1>Celso Casa e Construção</h1>
       </div>
+      <div class="links">
+        <a href="https://wa.me/5548999238448"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://instagram.com/celsocasaeconstrucao"><i class="bi bi-instagram"></i></a>
+        <a href="tel:04832429733"><i class="bi bi-telephone-fill"></i></a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <img
+        src="frame.png"
+        alt="Foto da loja Celso Casa e Construção"
+        style="width: 100%; border-radius: 12px"
+      />
+    </section>
+
+    <section class="section">
+      <h3>Sobre a Celso Casa e Construção</h3>
+      <p style="text-align: center">
+        Desde 2005, oferecemos tudo para sua obra e reforma em Palhoça. Materiais de construção, ferramentas e atendimento especializado para garantir a qualidade e praticidade que você merece!
+      </p>
+    </section>
+
+    <section class="section">
+      <h3>O que oferecemos</h3>
+      <div class="cards">
+        <div class="card">
+          <i class="bi bi-hammer"></i>
+          <h4>Materiais de Construção</h4>
+          <p>Tijolos, cimento, areia, brita, tintas e muito mais para sua obra.</p>
+        </div>
+        <div class="card">
+          <i class="bi bi-tools"></i>
+          <h4>Ferramentas</h4>
+          <p>Ferramentas manuais e elétricas para profissionais e amadores.</p>
+        </div>
+        <div class="card">
+          <i class="bi bi-truck"></i>
+          <h4>Entrega Rápida</h4>
+          <p>Entrega ágil e segura para sua comodidade.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Para quem é</h3>
+      <div class="cards">
+        <div class="card">
+          <i class="bi bi-person-badge"></i>
+          <h4>Profissionais da Construção</h4>
+          <p>Materiais e ferramentas para pedreiros, pintores, eletricistas e mais.</p>
+        </div>
+        <div class="card">
+          <i class="bi bi-house"></i>
+          <h4>Famílias</h4>
+          <p>Produtos para reformas, manutenção e melhorias no lar.</p>
+        </div>
+        <div class="card">
+          <i class="bi bi-lightbulb"></i>
+          <h4>Empreendedores</h4>
+          <p>Atendimento personalizado para pequenas e grandes obras.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Fotos da loja</h3>
+      <div class="photos">
+        <div class="photo">
+          <img src="profile.jpg" alt="Foto 1" onclick="openModal(this.src)" />
+        </div>
+        <div class="photo">
+          <img src="frame.png" alt="Foto 2" onclick="openModal(this.src)" />
+        </div>
+        <div class="photo">
+          <img src="profile.jpg" alt="Foto 3" onclick="openModal(this.src)" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Contato</h3>
+      <div class="cards">
+        <a class="card" href="https://wa.me/5548999238448" style="text-decoration:none;">
+          <i class="bi bi-whatsapp"></i>
+          <h4 style="color:var(--primary);">(48) 99923-8448</h4>
+        </a>
+        <a class="card" href="https://instagram.com/celsocasaeconstrucao" style="text-decoration:none;">
+          <i class="bi bi-instagram"></i>
+          <h4 style="color:var(--primary);">@celsocasaeconstrucao</h4>
+        </a>
+        <a class="card" href="tel:04832429733" style="text-decoration:none;">
+          <i class="bi bi-telephone-fill"></i>
+          <h4 style="color:var(--primary);">(48) 3242-9733</h4>
+        </a>
+      </div>
+    </section>
+
+    <div
+      id="modalZoom"
+      style="
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <span
+        onclick="closeModal()"
+        style="
+          position: absolute;
+          top: 30px;
+          right: 40px;
+          font-size: 2.5rem;
+          color: #fff;
+          cursor: pointer;
+          font-family: sans-serif;
+        "
+        >&times;</span
+      >
+      <img
+        id="modalImg"
+        src=""
+        style="
+          max-width: 90vw;
+          max-height: 80vh;
+          border-radius: 12px;
+          box-shadow: 0 2px 20px #000;
+        "
+      />
+    </div>
+    <script>
+      function openModal(src) {
+        document.getElementById("modalImg").src = src;
+        document.getElementById("modalZoom").style.display = "flex";
+      }
+      function closeModal() {
+        document.getElementById("modalZoom").style.display = "none";
+        document.getElementById("modalImg").src = "";
+      }
+      document
+        .getElementById("modalZoom")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeModal();
+        });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeModal();
+      });
+    </script>
+
+    <section class="testimonials">
+      <h2>O que dizem nossos clientes</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <p>
+            “Sempre encontro tudo o que preciso para minha obra. Atendimento nota 10!”
+          </p>
+          <span>— João S.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Entrega rápida e produtos de qualidade. Recomendo para todos!”
+          </p>
+          <span>— Maria F.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Equipe atenciosa e preços justos. Cliente fiel há anos.”
+          </p>
+          <span>— Ricardo L.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Ferramentas de ótima qualidade e variedade de materiais.”
+          </p>
+          <span>— Beatriz M.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Sempre sou bem atendido e encontro tudo para minha reforma.”
+          </p>
+          <span>— Carlos P.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “A loja é referência em Palhoça. Recomendo de olhos fechados!”
+          </p>
+          <span>— Fernanda T.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Ótimo atendimento e entrega no prazo. Parabéns a toda equipe!”
+          </p>
+          <span>— Lucas D.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Variedade de produtos e facilidade no pagamento. Muito bom!”
+          </p>
+          <span>— Camila R.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Localização</h3>
+      <p style="text-align: center">
+        Av. Atílio Pedro Pagani, 1950 - Passa Vinte, Palhoça - SC, 88132-149
+      </p>
+      <iframe
+        class="map"
+        src="https://www.google.com/maps?q=Av.+Atílio+Pedro+Pagani,+1950+-+Passa+Vinte,+Palhoça+-+SC,+88132-149&output=embed"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </section>
+
+    <section class="section">
       <div class="adsense-container">
+        <!-- AdSense -->
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2727171811005381"
           crossorigin="anonymous"
         ></script>
-        <!-- anuncio-horizontal -->
         <ins
           class="adsbygoogle"
           style="display: block"
@@ -232,6 +457,21 @@
           (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
       </div>
-    </div>
+    </section>
+
+    <footer>
+      <a href="../index.html">
+        <img
+          src="../assets/logo_recortada_1500.png"
+          alt="Logo"
+          style="max-width: 140px"
+        />
+      </a>
+      <div style="text-align: center">
+        © Cartão de Visita Digital. <br />
+        Todos os direitos reservados.
+      </div>
+      <div style="width: 140px"></div>
+    </footer>
   </body>
 </html>

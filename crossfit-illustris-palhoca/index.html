@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <script
       async
@@ -17,205 +17,429 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-R5NWFWRWJ1");
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cartão de Visita - CrossFit ILLUSTRIS Palhoça</title>
+    <title>CrossFit ILLUSTRIS Palhoça - Treinamento Funcional e Saúde</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <style>
+      :root {
+        --primary: #8a7603;
+        --text: #2c2c2c;
+      }
       body {
-        background-color: #ffffff;
+        margin: 0;
         font-family: "Poppins", sans-serif;
-        color: #333;
+        color: var(--text);
+      }
+      header {
+        background: var(--primary);
+        padding: 20px;
         display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 40px 20px;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
       }
-      .link-in-bio-container {
-        max-width: 350px;
-        width: 100%;
-        background: #f8f9fa;
-        border-radius: 25px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        position: relative;
-        padding-bottom: 0;
-        overflow: hidden;
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
       }
-      .header-bg {
-        height: 100px;
-        background-color: #8a7603;
-      }
-      .profile-section {
-        margin-top: -50px;
-        position: relative;
-        z-index: 2;
-        text-align: center;
-      }
-      .profile-img {
-        width: 100px;
-        height: 100px;
+      .header-left img {
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         object-fit: cover;
-        border: 5px solid #ffffff;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
       }
-      .profile-name {
+      header h1 {
         font-family: "Playfair Display", serif;
-        font-size: 1.8rem;
-        margin-top: 15px;
-        margin-bottom: 5px;
-        color: #2c2c2c;
+        margin: 0;
+        font-size: 1.5rem;
+        color: #fff;
       }
-      .job-title {
-        font-size: 0.9rem;
-        color: #555;
-        margin-bottom: 2px;
-      }
-      .company-name {
-        font-size: 0.8rem;
-        font-weight: 500;
-        color: #8a7603;
-        margin-bottom: 20px;
-      }
-      .links-container {
-        padding: 0 30px;
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .btn-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 8px 0;
-        width: 100%;
-        max-width: 300px;
-        padding: 12px 20px;
-        font-size: 0.8rem;
-        font-weight: 500;
+      header .links a {
+        margin-left: 15px;
+        color: #fff;
         text-decoration: none;
-        border-radius: 50px;
-        transition: all 0.3s ease;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        background-color: transparent;
-        border: 2px solid #252424;
-        color: #252424;
+        font-size: 1.2rem;
       }
-      .btn-link:hover {
-        background-color: #8a7603; /* Cor primária */
-        color: #ffffff;
-        transform: translateY(-2px);
+      .hero {
+        height: 400px;
+        overflow: hidden;
       }
-      .btn-link i {
-        margin-right: 10px;
-        font-size: 1.1rem;
+      .hero img {
+        width: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+        height: 100%;
+        max-height: 400px;
+        display: block;
       }
-      .footer {
-        background-color: #8a7603;
-        padding: 20px;
+      .section {
+        padding: 50px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+      .section h3 {
         text-align: center;
-        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 1.8rem;
+        color: var(--primary);
       }
-
-      .business-info p {
-        font-size: 1rem;
-        color: #555;
-        margin: 0;
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
       }
-
-      .business-info h4 {
-        margin: 0;
+      .card {
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 280px;
+        text-align: center;
+        transition: box-shadow 0.2s;
       }
-
-      .margin-bottom {
+      .card:hover {
+        box-shadow: 0 4px 20px rgba(138, 118, 3, 0.15);
+      }
+      .card i {
+        font-size: 2rem;
+        color: var(--primary);
         margin-bottom: 10px;
       }
-      .adsense-container {
-        margin-top: 20px;
-        width: 100%;
-      }
-      .container-principal {
+      .photos {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+      .photo {
+        flex: 1 1 300px;
+        max-width: 300px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .photo img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+      }
+      .testimonials {
+        padding: 60px 20px;
+        background-color: #fdfdfd;
+        text-align: center;
+      }
+      .testimonials h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+        color: #444;
+      }
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .testimonial {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        text-align: left;
+      }
+      .testimonial p {
+        font-style: italic;
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .testimonial span {
+        font-weight: bold;
+        color: #777;
+        font-size: 0.9rem;
+      }
+      iframe.map {
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        border: none;
+      }
+      footer {
+        background: var(--primary);
+        color: #fff;
+        text-align: center;
+        padding: 2rem 1rem 1.2rem 1rem;
+        margin-top: 2.5rem;
+        font-size: 1.05rem;
+        display: flex;
+        flex-direction: row;
         align-items: center;
-        margin-bottom: 30px;
+        justify-content: space-between;
+      }
+      footer a {
+        color: #fff;
+        text-decoration: underline;
+      }
+      @media (max-width: 600px) {
+        footer {
+          flex-direction: column !important;
+          align-items: center !important;
+        }
+        footer img {
+          margin-bottom: 1rem !important;
+        }
+        footer div:last-child {
+          display: none;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="container-principal">
-      <div class="link-in-bio-container">
-        <div class="header-bg"></div>
-        <div class="profile-section">
-          <img
-            src="profile.jpg"
-            alt="Foto de CrossFit ILLUSTRIS Palhoça"
-            class="profile-img"
-          />
-          <h1 class="profile-name">CrossFit ILLUSTRIS Palhoça</h1>
-          <div class="business-info">
-            <div class="margin-bottom">
-              <p>Transformando vidas através do movimento!</p>
-            </div>
-
-            <div class="margin-bottom">
-              <h4>Serviços ou produtos oferecidos</h4>
-              <p>Treinamento Funcional e CrossFit</p>
-            </div>
-
-            <div class="margin-bottom">
-              <h4>Horário de funcionamento</h4>
-              <p>seg - sex: 06:00 - 22:00<br />sab: 09:00 - 11:00</p>
-            </div>
-          </div>
-          <p class="job-title">
-            R. Marabá, 88 - Passa Vinte, Palhoça - SC, 88133-010
-          </p>
-        </div>
-        <div class="links-container">
-          <a href="https://wa.me/5548999208717" class="btn-link">
-            <i class="bi bi-whatsapp"></i>
-            <span>WhatsApp</span>
-          </a>
-          <a
-            href="https://www.instagram.com/crossfitillustrispalhoca/"
-            class="btn-link"
-          >
-            <i class="bi bi-instagram"></i>
-            <span>Instagram</span>
-          </a>
-          <a
-            href="https://maps.app.goo.gl/1RgfSqrF1gxU3FTr6"
-            class="btn-link"
-          >
-            <i class="bi bi-geo-alt-fill"></i>
-            <span>Localização</span>
-          </a>
-        </div>
-        <footer class="footer"></footer>
+    <header>
+      <div class="header-left">
+        <img src="profile.jpg" alt="Logo CrossFit ILLUSTRIS Palhoça" />
+        <h1>CrossFit ILLUSTRIS Palhoça</h1>
       </div>
+      <div class="links">
+        <a href="https://wa.me/5548999208717"><i class="bi bi-whatsapp"></i></a>
+        <a href="https://www.instagram.com/crossfitillustrispalhoca/"><i class="bi bi-instagram"></i></a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <img
+        src="profile.jpg"
+        alt="Foto do box CrossFit ILLUSTRIS Palhoça"
+        style="width: 100%; border-radius: 12px"
+      />
+    </section>
+
+    <section class="section">
+      <h3>Sobre o Box</h3>
+      <p style="text-align: center">
+        Transformando vidas através do movimento! Treinamento funcional, CrossFit e acompanhamento profissional para todos os níveis. Venha fazer parte da nossa comunidade!
+      </p>
+    </section>
+
+    <section class="section">
+      <h3>O que oferecemos</h3>
+      <div class="cards">
+        <div class="card">
+          <i class="bi bi-barbell"></i>
+          <h4>CrossFit</h4>
+          <p>Aulas para todos os níveis, com acompanhamento de coaches certificados.</p>
+        </div>
+        <div class="card">
+          <i class="bi bi-person-arms-up"></i>
+          <h4>Treinamento Funcional</h4>
+          <p>Melhore sua saúde, força e condicionamento físico.</p>
+        </div>
+        <div class="card">
+          <i class="bi bi-people"></i>
+          <h4>Comunidade</h4>
+          <p>Ambiente motivador, eventos e integração entre alunos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Para quem é</h3>
+      <div class="cards">
+        <div class="card">
+          <i class="bi bi-people-fill"></i>
+          <h4>Iniciantes</h4>
+          <p>Quem quer começar a treinar com acompanhamento e segurança.</p>
+        </div>
+        <div class="card">
+          <i class="bi bi-person-badge"></i>
+          <h4>Atletas</h4>
+          <p>Desafios, evolução e performance para quem busca mais.</p>
+        </div>
+        <div class="card">
+          <i class="bi bi-heart-pulse"></i>
+          <h4>Qualidade de Vida</h4>
+          <p>Pessoas de todas as idades que querem saúde e bem-estar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Fotos do box</h3>
+      <div class="photos">
+        <div class="photo">
+          <img src="profile.jpg" alt="Foto 1" onclick="openModal(this.src)" />
+        </div>
+        <div class="photo">
+          <img src="profile.jpg" alt="Foto 2" onclick="openModal(this.src)" />
+        </div>
+        <div class="photo">
+          <img src="profile.jpg" alt="Foto 3" onclick="openModal(this.src)" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Contato</h3>
+      <div class="cards">
+        <a class="card" href="https://wa.me/5548999208717" style="text-decoration:none;">
+          <i class="bi bi-whatsapp"></i>
+          <h4 style="color:var(--primary);">(48) 99920-8717</h4>
+        </a>
+        <a class="card" href="https://www.instagram.com/crossfitillustrispalhoca/" style="text-decoration:none;">
+          <i class="bi bi-instagram"></i>
+          <h4 style="color:var(--primary);">@crossfitillustrispalhoca</h4>
+        </a>
+      </div>
+    </section>
+
+    <div
+      id="modalZoom"
+      style="
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <span
+        onclick="closeModal()"
+        style="
+          position: absolute;
+          top: 30px;
+          right: 40px;
+          font-size: 2.5rem;
+          color: #fff;
+          cursor: pointer;
+          font-family: sans-serif;
+        "
+        >&times;</span
+      >
+      <img
+        id="modalImg"
+        src=""
+        style="
+          max-width: 90vw;
+          max-height: 80vh;
+          border-radius: 12px;
+          box-shadow: 0 2px 20px #000;
+        "
+      />
+    </div>
+    <script>
+      function openModal(src) {
+        document.getElementById("modalImg").src = src;
+        document.getElementById("modalZoom").style.display = "flex";
+      }
+      function closeModal() {
+        document.getElementById("modalZoom").style.display = "none";
+        document.getElementById("modalImg").src = "";
+      }
+      document
+        .getElementById("modalZoom")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeModal();
+        });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeModal();
+      });
+    </script>
+
+    <section class="testimonials">
+      <h2>O que dizem nossos alunos</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <p>
+            “O ambiente é incrível, me sinto motivado todos os dias!”
+          </p>
+          <span>— João S.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Os coaches são super atenciosos e me ajudaram a evoluir muito.”
+          </p>
+          <span>— Maria F.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “A estrutura do box é excelente, recomendo para todos!”
+          </p>
+          <span>— Ricardo L.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Fiz muitos amigos e melhorei minha saúde.”
+          </p>
+          <span>— Beatriz M.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Aulas dinâmicas e desafiadoras, nunca fico entediado.”
+          </p>
+          <span>— Carlos P.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “O melhor box de Palhoça, sem dúvidas!”
+          </p>
+          <span>— Fernanda T.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Aqui encontrei motivação para mudar de vida.”
+          </p>
+          <span>— Lucas D.</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Recomendo para quem busca saúde e bem-estar.”
+          </p>
+          <span>— Camila R.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Localização</h3>
+      <p style="text-align: center">
+        R. Marabá, 88 - Passa Vinte, Palhoça - SC, 88133-010
+      </p>
+      <iframe
+        class="map"
+        src="https://www.google.com/maps?q=R.+Marabá,+88+-+Passa+Vinte,+Palhoça+-+SC,+88133-010&output=embed"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </section>
+
+    <section class="section">
       <div class="adsense-container">
+        <!-- AdSense -->
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2727171811005381"
           crossorigin="anonymous"
         ></script>
-        <!-- anuncio-horizontal -->
         <ins
           class="adsbygoogle"
           style="display: block"
@@ -228,6 +452,21 @@
           (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
       </div>
-    </div>
+    </section>
+
+    <footer>
+      <a href="../index.html">
+        <img
+          src="../assets/logo_recortada_1500.png"
+          alt="Logo"
+          style="max-width: 140px"
+        />
+      </a>
+      <div style="text-align: center">
+        © Cartão de Visita Digital. <br />
+        Todos os direitos reservados.
+      </div>
+      <div style="width: 140px"></div>
+    </footer>
   </body>
 </html>
