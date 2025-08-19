@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Gurgelio & Associados - Advocacia Empresarial, Cível e Previdenciária
+    </title>
+
+    <!-- AdSense -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2727171811005381"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-R5NWFWRWJ1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-R5NWFWRWJ1");
+    </script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary: #dabb68; /* padrão fornecido */
+        --text: #2c2c2c;
+        --accent-dark: #1f3b56;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      header {
+        background: var(--primary);
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .header-left img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      header h1 {
+        font-family: "Playfair Display", serif;
+        margin: 0;
+        font-size: 1.5rem;
+        color: #fff;
+      }
+
+      header .links a {
+        margin-left: 15px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+
+      /* HERO: cobre toda a largura/altura definida, sem margens/padding internas */
+      .hero {
+        height: 420px;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* imagem cobre 100% do hero, sem borda arredondada */
+      .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 0;
+      }
+
+      .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #fff;
+        z-index: 2;
+        padding: 20px 25px;
+        border-radius: 8px;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* fundo preto com 50% de transparência */
+      }
+
+      .hero-text h2 {
+        font-size: 2.2rem;
+        font-family: "Playfair Display", serif;
+        margin: 0 0 6px 0;
+        text-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+      }
+
+      .hero-text p {
+        font-size: 1.05rem;
+        margin: 0;
+        text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      }
+
+      .section {
+        padding: 50px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      .section h3 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 1.8rem;
+        color: var(--primary);
+      }
+
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .card {
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        padding: 20px;
+        width: 280px;
+        text-align: center;
+      }
+
+      .card i {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      .photos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .photo {
+        flex: 1 1 300px;
+        max-width: 300px;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .photo img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        cursor: pointer;
+      }
+
+      .testimonials {
+        padding: 60px 20px;
+        background-color: #fdfdfd;
+        text-align: center;
+      }
+
+      .testimonials h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+        color: #444;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 24px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .testimonial {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        text-align: left;
+      }
+
+      .testimonial p {
+        font-style: italic;
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .testimonial span {
+        font-weight: bold;
+        color: #777;
+        font-size: 0.9rem;
+      }
+
+      iframe.map {
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        border: none;
+      }
+
+      footer {
+        background: var(--primary);
+        color: #fff;
+        text-align: center;
+        padding: 2rem 1rem 1.2rem 1rem;
+        margin-top: 2.5rem;
+        font-size: 1.05rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      footer a {
+        color: #fff;
+        text-decoration: underline;
+      }
+
+      /* Modal Zoom */
+      #modalZoom {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+      }
+
+      #modalZoom img {
+        max-width: 90vw;
+        max-height: 80vh;
+        border-radius: 12px;
+        box-shadow: 0 2px 20px #000;
+      }
+
+      #modalZoom .close-btn {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        font-size: 2.5rem;
+        color: #fff;
+        cursor: pointer;
+        font-family: sans-serif;
+      }
+
+      @media (max-width: 600px) {
+        .hero {
+          height: 320px;
+        }
+        .hero-text h2 {
+          font-size: 1.6rem;
+        }
+        footer {
+          flex-direction: column !important;
+          align-items: center !important;
+        }
+        footer img {
+          margin-bottom: 1rem !important;
+        }
+        footer div:last-child {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="profile.jpg" alt="Logo Gurgelio & Associados" />
+        <h1>Gurgelio & Associados</h1>
+      </div>
+      <div class="links" aria-label="Redes sociais">
+        <a href="https://wa.me/5547996178368" aria-label="WhatsApp"
+          ><i class="bi bi-whatsapp"></i
+        ></a>
+        <a href="https://instagram.com/gurgelioadvogados" aria-label="Instagram"
+          ><i class="bi bi-instagram"></i
+        ></a>
+      </div>
+    </header>
+
+    <!-- HERO: cobre toda a área do bloco, sem margens internas -->
+    <section class="hero" aria-hidden="false">
+      <img
+        src="hero.jpg"
+        alt="Escritório de Advocacia - Gurgelio & Associados"
+      />
+      <div class="hero-text" role="banner" aria-label="Slogan">
+        <h2>Advocacia de Resultados</h2>
+        <p>Protegendo seus direitos com experiência e integridade</p>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <h3>Sobre Nós</h3>
+      <p style="text-align: center">
+        O escritório <b>Gurgelio & Associados</b> atua nas áreas de
+        <b>Direito Empresarial, Cível e Previdenciário</b>, oferecendo
+        assessoria jurídica de excelência para empresas e pessoas físicas. Nossa
+        missão é entregar soluções estratégicas e resultados concretos para
+        nossos clientes.
+      </p>
+    </section>
+
+    <section class="section" id="areas">
+      <h3>Nossas Áreas de Atuação</h3>
+      <div class="cards" role="list">
+        <div class="card" role="listitem">
+          <i class="bi bi-building"></i>
+          <h4>Direito Empresarial</h4>
+          <p>Suporte jurídico completo para empresas, contratos e litígios.</p>
+        </div>
+        <div class="card" role="listitem">
+          <i class="bi bi-people"></i>
+          <h4>Direito Cível</h4>
+          <p>Defesa de interesses em disputas contratuais e familiares.</p>
+        </div>
+        <div class="card" role="listitem">
+          <i class="bi bi-person-badge"></i>
+          <h4>Direito Previdenciário</h4>
+          <p>
+            Auxílio em aposentadorias, benefícios e revisões previdenciárias.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nova seção: Para quem é -->
+    <section class="section" id="para-quem-e">
+      <h3>Para quem é</h3>
+      <div class="cards" role="list">
+        <div class="card" role="listitem">
+          <i class="bi bi-people-fill"></i>
+          <h4>Empresas</h4>
+          <p>Consultoria e defesa para negócios de todos os portes.</p>
+        </div>
+        <div class="card" role="listitem">
+          <i class="bi bi-briefcase"></i>
+          <h4>Profissionais</h4>
+          <p>
+            Atuação em contratos, disputas trabalhistas e consultoria contínua.
+          </p>
+        </div>
+        <div class="card" role="listitem">
+          <i class="bi bi-heart-fill"></i>
+          <h4>Pessoas Físicas</h4>
+          <p>Assistência em causas cíveis, familiares e previdenciárias.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fotos">
+      <h3>Fotos do Escritório</h3>
+      <div class="photos">
+        <div class="photo">
+          <img
+            src="img1.png"
+            alt="Foto 1 do escritório"
+            onclick="openModal(this.src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="img2.png"
+            alt="Foto 2 do escritório"
+            onclick="openModal(this.src)"
+          />
+        </div>
+        <div class="photo">
+          <img
+            src="img3.png"
+            alt="Foto 3 do escritório"
+            onclick="openModal(this.src)"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <h3>Contato</h3>
+      <div class="cards">
+        <a
+          class="card"
+          href="https://wa.me/5547996178368"
+          style="text-decoration: none"
+        >
+          <i class="bi bi-whatsapp"></i>
+          <h4 style="color: var(--primary)">(47) 99617-8368</h4>
+        </a>
+        <a
+          class="card"
+          href="mailto:Gurgelioadvocacia@outlook.com"
+          style="text-decoration: none"
+        >
+          <i class="bi bi-envelope"></i>
+          <h4 style="color: var(--primary)">gurgelioadvocacia@outlook.com</h4>
+        </a>
+        <a
+          class="card"
+          href="https://instagram.com/gurgelioadvogados"
+          style="text-decoration: none"
+        >
+          <i class="bi bi-instagram"></i>
+          <h4 style="color: var(--primary)">@gurgelioadvogados</h4>
+        </a>
+      </div>
+    </section>
+
+    <!-- Modal Zoom (padrão) -->
+    <div
+      id="modalZoom"
+      aria-hidden="true"
+      style="display: none; align-items: center; justify-content: center"
+    >
+      <span class="close-btn" onclick="closeModal()" aria-label="Fechar"
+        >&times;</span
+      >
+      <img id="modalImg" src="" alt="Zoom da imagem" />
+    </div>
+
+    <section class="testimonials" id="depoimentos">
+      <h2>O que dizem nossos clientes</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <p>
+            “A Gurgelio & Associados foi fundamental na negociação do meu
+            contrato empresarial. Profissionalismo impecável.”
+          </p>
+          <span>— Marcelo A., Empresário</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Consegui a revisão da minha aposentadoria com a ajuda deles. Hoje
+            recebo o que é meu por direito.”
+          </p>
+          <span>— Sandra P., Aposentada</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Transparência, ética e resultados. Eles cuidaram do meu processo
+            cível com muita competência.”
+          </p>
+          <span>— João C., Cliente</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Me senti seguro desde a primeira reunião. Excelente acompanhamento
+            em cada etapa do meu caso.”
+          </p>
+          <span>— Fernanda R., Empresária</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Atendimento ágil e muito bem fundamentado. Recomendo para qualquer
+            empresa que precise de segurança jurídica.”
+          </p>
+          <span>— Ricardo M., Diretor</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Resolveram uma questão tributária complicada com clareza e
+            estratégia. Resultado acima do esperado.”
+          </p>
+          <span>— Ana L., Contadora</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Profissionalismo e empatia. Me explicaram todas as etapas do
+            processo e mantiveram contato constante.”
+          </p>
+          <span>— Beatriz S., Cliente</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Equipe preparada e comprometida. Conduziram nossa negociação com
+            firmeza e ética.”
+          </p>
+          <span>— Eduardo F., Empresário</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="localizacao">
+      <h3>Localização</h3>
+      <p style="text-align: center">
+        <strong>Endereço :</strong>
+        Av. Saí Mirim, 134 - Barra do Saí, Itapoá - WorkSpace, sala 02
+      </p>
+
+      <iframe
+        class="map"
+        src="https://www.google.com/maps?q=Av.+Sa%C3%AD+Mirim,+134+-+Barra+do+Sa%C3%AD,+Itapo%C3%A1+-+WorkSpace,+sala+02&hl=pt-BR&z=17&output=embed"
+        width="100%"
+        height="320"
+        style="border: 0; border-radius: 10px"
+        allowfullscreen
+        loading="lazy"
+        title="Mapa — Av. Saí Mirim, 134 - Itapoá"
+      ></iframe>
+    </section>
+
+    <section class="section">
+      <div class="adsense-container" style="text-align: center">
+        <!-- AdSense responsivo (padrão do template) -->
+        <ins
+          class="adsbygoogle"
+          style="display: block"
+          data-ad-client="ca-pub-2727171811005381"
+          data-ad-slot="4151101568"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    </section>
+
+    <footer>
+      <a href="../index.html">
+        <img
+          src="../assets/logo_recortada_1500.png"
+          alt="Logo"
+          style="max-width: 140px"
+        />
+      </a>
+      <div style="text-align: center">
+        © Cartão de Visita Digital. <br />
+        Todos os direitos reservados.
+      </div>
+      <div style="width: 140px"></div>
+    </footer>
+
+    <script>
+      function openModal(src) {
+        const modal = document.getElementById("modalZoom");
+        const img = document.getElementById("modalImg");
+        img.src = src;
+        modal.style.display = "flex";
+        modal.setAttribute("aria-hidden", "false");
+      }
+      function closeModal() {
+        const modal = document.getElementById("modalZoom");
+        const img = document.getElementById("modalImg");
+        modal.style.display = "none";
+        modal.setAttribute("aria-hidden", "true");
+        img.src = "";
+      }
+      document
+        .getElementById("modalZoom")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeModal();
+        });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeModal();
+      });
+    </script>
+  </body>
+</html>
