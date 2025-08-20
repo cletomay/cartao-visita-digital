@@ -1,2 +1,4 @@
 maps*.py
 estabelecimentos.txt
+gerador/uploads
+gerador/node_modules
