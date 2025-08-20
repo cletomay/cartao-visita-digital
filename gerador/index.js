@@ -31,10 +31,12 @@ app.post('/gerar', upload.fields([
     cor,
     whatsapp,
     instagram,
+    facebook,
     endereco,
-    maps,
     businessHours,
-    descricao
+    descricao,
+    mapsUrl,
+    mapsEmbed
   } = req.body;
 
   // Validação para cor hexadecimal
@@ -64,14 +66,19 @@ app.post('/gerar', upload.fields([
     }
   }
 
-  // Processa o campo maps: se preenchido com tag iframe, extrai a URL do atributo src.
-  let processedMaps = maps;
-  if (maps && maps.includes('<iframe')) {
-    const match = maps.match(/src\s*=\s*["']([^"']+)["']/);
-    if (match) {
-      processedMaps = match[1];
+  // Processa o campo mapsEmbed: se preenchido com tag iframe, extrai a URL do atributo src.
+  let embedUrl = '';
+  if (mapsEmbed) {
+    if (mapsEmbed.includes('<iframe')) {
+      const match = mapsEmbed.match(/src\s*=\s*["']([^"']+)['"]/);
+      if (match) {
+        embedUrl = match[1];
+      }
+    } else {
+      embedUrl = mapsEmbed;
     }
   }
+  // mapsUrl já vem pronto para os botões
 
   // Pasta destino
   const pasta = path.join(__dirname, '..', nome.replace(/[^a-zA-Z0-9-_]/g, '-').toLowerCase());
@@ -93,18 +100,20 @@ app.post('/gerar', upload.fields([
     cor: processedCor, // usa a cor ajustada
     whatsapp: processedWhatsapp, // usa o número ajustado
     instagram,
+    facebook,
     endereco,
-    maps: processedMaps || maps, // garante que processedMaps seja usado ou o valor original
+    maps: embedUrl, // usa a url embed para o iframe
+    mapsUrl, // url original para os botões
     businessHours,
     imagens,
-    descricao // passa a descrição para o template
+    descricao
   });
   fs.writeFileSync(path.join(pasta, 'index.html'), html);
 
   res.send(`<h2>Site gerado em: ${pasta}</h2><a href="/">Voltar</a>`);
 });
 
-function renderTemplate({ nome, cor, whatsapp, instagram, endereco, maps, businessHours, descricao, imagens }) {
+function renderTemplate({ nome, cor, whatsapp, instagram, facebook, endereco, maps, mapsUrl, businessHours, imagens, descricao }) {
   return `<!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -156,6 +165,8 @@ function renderTemplate({ nome, cor, whatsapp, instagram, endereco, maps, busine
       <div class="links">
         <a href="https://wa.me/${whatsapp}"><i class="bi bi-whatsapp"></i></a>
         <a href="https://instagram.com/${instagram}"><i class="bi bi-instagram"></i></a>
+        <a href="https://facebook.com/${facebook}"><i class="bi bi-facebook"></i></a>
+        <a href="${mapsUrl ? mapsUrl : '#'}" target="_blank" title="Localização"><i class="bi bi-geo-alt"></i></a>
       </div>
     </header>
     <section class="hero">
@@ -181,8 +192,10 @@ function renderTemplate({ nome, cor, whatsapp, instagram, endereco, maps, busine
     <section class="section">
       <h3>Contato</h3>
       <div class="cards">
-        <a class="card" href="https://wa.me/${whatsapp}" style="text-decoration:none;"><i class="bi bi-whatsapp"></i><h4 style="color:var(--primary);">${whatsapp}</h4></a>
-        <a class="card" href="https://instagram.com/${instagram}" style="text-decoration:none;"><i class="bi bi-instagram"></i><h4 style="color:var(--primary);">@${instagram}</h4></a>
+        ${whatsapp ? `<a class="card" href="https://wa.me/${whatsapp}" style="text-decoration:none;"><i class="bi bi-whatsapp"></i><h4 style="color:var(--primary);">Whatsapp</h4></a>` : ''}
+        ${instagram ? `<a class="card" href="https://instagram.com/${instagram}" style="text-decoration:none;"><i class="bi bi-instagram"></i><h4 style="color:var(--primary);">Instagram</h4></a>` : ''}
+        ${facebook ? `<a class="card" href="${facebook.startsWith('http') ? facebook : `https://facebook.com/${facebook}`}" style="text-decoration:none;" target="_blank"><i class="bi bi-facebook"></i><h4 style="color:var(--primary);">Facebook</h4></a>` : ''}
+        ${mapsUrl ? `<a class="card" href="${mapsUrl}" target="_blank" style="text-decoration:none;"><i class="bi bi-geo-alt"></i><h4 style="color:var(--primary);">Localização</h4></a>` : ''}
       </div>
     </section>
     <section class="section">

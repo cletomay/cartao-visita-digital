@@ -33,16 +33,20 @@
       </div>
       <label>Número WhatsApp (apenas números, com DDD e país)</label>
       <input type="text" name="whatsapp" placeholder="5548999999999" required>
-      <label>Instagram (apenas usuário)</label>
-      <input type="text" name="instagram" placeholder="usuario" required>
+  <label>Instagram (apenas usuário)</label>
+  <input type="text" name="instagram" placeholder="usuario" required>
+  <label>Facebook (apenas usuário ou url)</label>
+  <input type="text" name="facebook" placeholder="usuario ou https://facebook.com/pagina">
       <div>
         <label for="businessHours">Horário de Funcionamento:</label>
         <input type="text" id="businessHours" name="businessHours" placeholder="Ex.: Segunda a Sexta: 08:00 - 18:00" />
       </div>
       <label>Endereço</label>
       <input type="text" name="endereco" required>
-      <label>URL do Google Maps (iframe src)</label>
-      <input type="text" name="maps" required>
+  <label>URL do Google Maps (para botões de localização)</label>
+  <input type="text" name="mapsUrl" placeholder="https://www.google.com/maps/place/..." required>
+  <label>Embed do Google Maps (cole a tag iframe completa ou apenas o src)</label>
+  <input type="text" name="mapsEmbed" placeholder="<iframe src=...> ou https://www.google.com/maps/embed?pb=...">
       <label>Imagens</label>
       <div class="img-group">
         <label>Logo/Perfil <input type="file" name="profile" accept="image/*" required></label>
