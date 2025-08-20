@@ -110,6 +110,14 @@ app.post('/gerar', upload.fields([
   });
   fs.writeFileSync(path.join(pasta, 'index.html'), html);
 
+  // Adiciona o novo site ao sitemap.xml
+  const sitemapPath = path.join(__dirname, '..', 'sitemap.xml');
+  let sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+  const urlName = nome.replace(/[^a-zA-Z0-9-_]/g, '-').toLowerCase();
+  const newUrl = `    <url>\n        <loc>https://www.cartao-visita-digital.com/${urlName}/</loc>\n        <lastmod>${new Date().toISOString().slice(0, 10)}</lastmod>\n        <changefreq>weekly</changefreq>\n        <priority>0.8</priority>\n    </url>\n`;
+  sitemapContent = sitemapContent.replace(/<\/urlset>/, `${newUrl}</urlset>`);
+  fs.writeFileSync(sitemapPath, sitemapContent);
+
   res.send(`<h2>Site gerado em: ${pasta}</h2><a href="/">Voltar</a>`);
 });
 
