@@ -1,127 +1,187 @@
-import express from 'express';
-import multer from 'multer';
-import path from 'path';
-import fs from 'fs';
-import { fileURLToPath } from 'url';
+import express from "express";
+import multer from "multer";
+import path from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const PORT = 3000;
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 
-const upload = multer({ dest: path.join(process.cwd(), 'uploads') });
+const upload = multer({ dest: path.join(process.cwd(), "uploads") });
 
-app.get('/', (req, res) => {
-  res.render('form');
+app.get("/", (req, res) => {
+  res.render("form");
 });
 
-app.post('/gerar', upload.fields([
-  { name: 'profile', maxCount: 1 },
-  { name: 'hero', maxCount: 1 },
-  { name: 'img1', maxCount: 1 },
-  { name: 'img2', maxCount: 1 },
-  { name: 'img3', maxCount: 1 }
-]), (req, res) => {
-  const {
-    nome,
-    cor,
-    whatsapp,
-    instagram,
-    facebook,
-    endereco,
-    businessHours,
-    descricao,
-    mapsUrl,
-    mapsEmbed
-  } = req.body;
+app.post(
+  "/gerar",
+  upload.fields([
+    { name: "profile", maxCount: 1 },
+    { name: "hero", maxCount: 1 },
+    { name: "img1", maxCount: 1 },
+    { name: "img2", maxCount: 1 },
+    { name: "img3", maxCount: 1 },
+  ]),
+  (req, res) => {
+    const {
+      nome,
+      cor,
+      whatsapp,
+      instagram,
+      facebook,
+      endereco,
+      businessHours,
+      descricao,
+      mapsUrl,
+      mapsEmbed,
+      oferecemos1,
+      oferecemos2,
+      oferecemos3,
+      publico1,
+      publico2,
+      publico3,
+    } = req.body;
 
-  // Validação para cor hexadecimal
-  if (!/^#?([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$/.test(cor)) {
-    return res.send("Erro: O valor da cor deve ser um hexadecimal válido (ex: #FF0000).");
-  }
+    const parseCard = (texto) => {
+      if (!texto) return null;
+      const [titulo, ...rest] = texto.split("-");
+      return {
+        titulo: titulo?.trim(),
+        descricao: rest.join("-").trim(), // junta o resto caso tenha mais de um "-"
+      };
+    };
 
-  // Ajuste do valor da cor hexadecimal
-  let processedCor = cor;
-  if (cor && !cor.startsWith('#')) {
-    processedCor = `#${cor}`;
-  }
+    // 👉 Monta arrays de objetos
+    const oferecemosArray = [
+      parseCard(oferecemos1),
+      parseCard(oferecemos2),
+      parseCard(oferecemos3),
+    ].filter(Boolean);
+    const publicoArray = [
+      parseCard(publico1),
+      parseCard(publico2),
+      parseCard(publico3),
+    ].filter(Boolean);
 
-  // Validação e ajuste do número de WhatsApp
-  let processedWhatsapp = whatsapp;
-  if (whatsapp) {
-    if (/^\d{8,}$/.test(whatsapp)) {
-      // Adiciona +55 se o número não começar com 55
-      if (!whatsapp.startsWith('55')) {
-        processedWhatsapp = `55${whatsapp}`;
+    // Validação para cor hexadecimal
+    if (!/^#?([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$/.test(cor)) {
+      return res.send(
+        "Erro: O valor da cor deve ser um hexadecimal válido (ex: #FF0000)."
+      );
+    }
+
+    // Ajuste do valor da cor hexadecimal
+    let processedCor = cor;
+    if (cor && !cor.startsWith("#")) {
+      processedCor = `#${cor}`;
+    }
+
+    // Validação e ajuste do número de WhatsApp
+    let processedWhatsapp = whatsapp;
+    if (whatsapp) {
+      if (/^\d{8,}$/.test(whatsapp)) {
+        // Adiciona +55 se o número não começar com 55
+        if (!whatsapp.startsWith("55")) {
+          processedWhatsapp = `55${whatsapp}`;
+        }
+      } else if (/^\+55\d{8,}$/.test(whatsapp)) {
+        // Remove o sinal de +
+        processedWhatsapp = whatsapp.replace("+", "");
+      } else {
+        return res.send(
+          "Erro: O número de WhatsApp está incompleto ou inválido."
+        );
       }
-    } else if (/^\+55\d{8,}$/.test(whatsapp)) {
-      // Remove o sinal de +
-      processedWhatsapp = whatsapp.replace('+', '');
-    } else {
-      return res.send("Erro: O número de WhatsApp está incompleto ou inválido.");
     }
-  }
 
-  // Processa o campo mapsEmbed: se preenchido com tag iframe, extrai a URL do atributo src.
-  let embedUrl = '';
-  if (mapsEmbed) {
-    if (mapsEmbed.includes('<iframe')) {
-      const match = mapsEmbed.match(/src\s*=\s*["']([^"']+)['"]/);
-      if (match) {
-        embedUrl = match[1];
+    // Processa o campo mapsEmbed: se preenchido com tag iframe, extrai a URL do atributo src.
+    let embedUrl = "";
+    if (mapsEmbed) {
+      if (mapsEmbed.includes("<iframe")) {
+        const match = mapsEmbed.match(/src\s*=\s*["']([^"']+)['"]/);
+        if (match) {
+          embedUrl = match[1];
+        }
+      } else {
+        embedUrl = mapsEmbed;
       }
-    } else {
-      embedUrl = mapsEmbed;
     }
+    // mapsUrl já vem pronto para os botões
+
+    // Pasta destino
+    const pasta = path.join(
+      __dirname,
+      "..",
+      nome.replace(/[^a-zA-Z0-9-_]/g, "-").toLowerCase()
+    );
+    fs.mkdirSync(pasta, { recursive: true });
+
+    // Copiar imagens
+    const imagens = {};
+    ["profile", "hero", "img1", "img2", "img3"].forEach((campo) => {
+      if (req.files[campo]) {
+        const dest = path.join(pasta, req.files[campo][0].originalname);
+        fs.copyFileSync(req.files[campo][0].path, dest);
+        imagens[campo] = req.files[campo][0].originalname;
+      }
+    });
+
+    // Gerar index.html
+    const html = renderTemplate({
+      nome,
+      cor: processedCor, // usa a cor ajustada
+      whatsapp: processedWhatsapp, // usa o número ajustado
+      instagram,
+      facebook,
+      endereco,
+      maps: embedUrl, // usa a url embed para o iframe
+      mapsUrl, // url original para os botões
+      businessHours,
+      imagens,
+      descricao,
+      oferecemos: oferecemosArray,
+      publico: publicoArray,
+    });
+    fs.writeFileSync(path.join(pasta, "index.html"), html);
+
+    // Adiciona o novo site ao sitemap.xml
+    const sitemapPath = path.join(__dirname, "..", "sitemap.xml");
+    let sitemapContent = fs.readFileSync(sitemapPath, "utf8");
+    const urlName = nome.replace(/[^a-zA-Z0-9-_]/g, "-").toLowerCase();
+    const newUrl = `    <url>\n        <loc>https://www.cartao-visita-digital.com/${urlName}/</loc>\n        <lastmod>${new Date()
+      .toISOString()
+      .slice(
+        0,
+        10
+      )}</lastmod>\n        <changefreq>weekly</changefreq>\n        <priority>0.8</priority>\n    </url>\n`;
+    sitemapContent = sitemapContent.replace(/<\/urlset>/, `${newUrl}</urlset>`);
+    fs.writeFileSync(sitemapPath, sitemapContent);
+
+    res.send(`<h2>Site gerado em: ${pasta}</h2><a href="/">Voltar</a>`);
   }
-  // mapsUrl já vem pronto para os botões
+);
 
-  // Pasta destino
-  const pasta = path.join(__dirname, '..', nome.replace(/[^a-zA-Z0-9-_]/g, '-').toLowerCase());
-  fs.mkdirSync(pasta, { recursive: true });
-
-  // Copiar imagens
-  const imagens = {};
-  ['profile', 'hero', 'img1', 'img2', 'img3'].forEach((campo) => {
-    if (req.files[campo]) {
-      const dest = path.join(pasta, req.files[campo][0].originalname);
-      fs.copyFileSync(req.files[campo][0].path, dest);
-      imagens[campo] = req.files[campo][0].originalname;
-    }
-  });
-
-  // Gerar index.html
-  const html = renderTemplate({
-    nome,
-    cor: processedCor, // usa a cor ajustada
-    whatsapp: processedWhatsapp, // usa o número ajustado
-    instagram,
-    facebook,
-    endereco,
-    maps: embedUrl, // usa a url embed para o iframe
-    mapsUrl, // url original para os botões
-    businessHours,
-    imagens,
-    descricao
-  });
-  fs.writeFileSync(path.join(pasta, 'index.html'), html);
-
-  // Adiciona o novo site ao sitemap.xml
-  const sitemapPath = path.join(__dirname, '..', 'sitemap.xml');
-  let sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
-  const urlName = nome.replace(/[^a-zA-Z0-9-_]/g, '-').toLowerCase();
-  const newUrl = `    <url>\n        <loc>https://www.cartao-visita-digital.com/${urlName}/</loc>\n        <lastmod>${new Date().toISOString().slice(0, 10)}</lastmod>\n        <changefreq>weekly</changefreq>\n        <priority>0.8</priority>\n    </url>\n`;
-  sitemapContent = sitemapContent.replace(/<\/urlset>/, `${newUrl}</urlset>`);
-  fs.writeFileSync(sitemapPath, sitemapContent);
-
-  res.send(`<h2>Site gerado em: ${pasta}</h2><a href="/">Voltar</a>`);
-});
-
-function renderTemplate({ nome, cor, whatsapp, instagram, facebook, endereco, maps, mapsUrl, businessHours, imagens, descricao }) {
+function renderTemplate({
+  nome,
+  cor,
+  whatsapp,
+  instagram,
+  facebook,
+  endereco,
+  maps,
+  mapsUrl,
+  businessHours,
+  imagens,
+  descricao,
+  oferecemos,
+  publico,
+}) {
   return `<!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -167,48 +227,116 @@ function renderTemplate({ nome, cor, whatsapp, instagram, facebook, endereco, ma
   <body>
     <header>
       <div class="header-left">
-        <img src="${imagens.profile || ''}" alt="Logo" />
+        <img src="${imagens.profile || ""}" alt="Logo" />
         <h1>${nome}</h1>
       </div>
       <div class="links">
         <a href="https://wa.me/${whatsapp}"><i class="bi bi-whatsapp"></i></a>
         <a href="https://instagram.com/${instagram}"><i class="bi bi-instagram"></i></a>
         <a href="https://facebook.com/${facebook}"><i class="bi bi-facebook"></i></a>
-        <a href="${mapsUrl ? mapsUrl : '#'}" target="_blank" title="Localização"><i class="bi bi-geo-alt"></i></a>
+        <a href="${
+          mapsUrl ? mapsUrl : "#"
+        }" target="_blank" title="Localização"><i class="bi bi-geo-alt"></i></a>
       </div>
     </header>
     <section class="hero">
-      <img src="${imagens.hero || ''}" alt="Hero Image" />
+      <img src="${imagens.hero || ""}" alt="Hero Image" />
     </section>
     <section class="section">
       <h3>Sobre ${nome}</h3>
-      <p style="text-align: center">${descricao || 'Descrição personalizada aqui.'}</p>
+      <p style="text-align: center">${
+        descricao || "Descrição personalizada aqui."
+      }</p>
     </section>
+
+    <section class="section" id="areas">
+  <h3>Nossas Áreas de Atuação</h3>
+  <div class="cards" role="list">
+    ${oferecemos
+      .map(
+        (item) => `
+        <div class="card" role="listitem">
+          <h4>${item.titulo}</h4>
+          <p>${item.descricao}</p>
+        </div>
+      `
+      )
+      .join("")}
+  </div>
+</section>
+
+<section class="section" id="para-quem-e">
+  <h3>Para quem é</h3>
+  <div class="cards" role="list">
+    ${publico
+      .map(
+        (item) => `
+        <div class="card" role="listitem">
+          <h4>${item.titulo}</h4>
+          <p>${item.descricao}</p>
+        </div>
+      `
+      )
+      .join("")}
+  </div>
+</section>
+
+
     <section class="section">
       <h3>Fotos do Local</h3>
       <div class="photos">
-        <div class="photo"><img src="${imagens.img1 || ''}" alt="Foto 1" onclick="openModal(this.src)" /></div>
-        <div class="photo"><img src="${imagens.img2 || ''}" alt="Foto 2" onclick="openModal(this.src)" /></div>
-        <div class="photo"><img src="${imagens.img3 || ''}" alt="Foto 3" onclick="openModal(this.src)" /></div>
+        <div class="photo"><img src="${
+          imagens.img1 || ""
+        }" alt="Foto 1" onclick="openModal(this.src)" /></div>
+        <div class="photo"><img src="${
+          imagens.img2 || ""
+        }" alt="Foto 2" onclick="openModal(this.src)" /></div>
+        <div class="photo"><img src="${
+          imagens.img3 || ""
+        }" alt="Foto 3" onclick="openModal(this.src)" /></div>
       </div>
     </section>
     <section class="section">
       <h3>Localização</h3>
       <p style="text-align: center">${endereco}</p>
-      ${maps ? `<iframe src="${maps}" width="600" height="450" style="border:0; width: 100%; height: 300px; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>` : ''}
+      ${
+        maps
+          ? `<iframe src="${maps}" width="600" height="450" style="border:0; width: 100%; height: 300px; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
+          : ""
+      }
     </section>
     <section class="section">
       <h3>Contato</h3>
       <div class="cards">
-        ${whatsapp ? `<a class="card" href="https://wa.me/${whatsapp}" style="text-decoration:none;"><i class="bi bi-whatsapp"></i><h4 style="color:var(--primary);">Whatsapp</h4></a>` : ''}
-        ${instagram ? `<a class="card" href="https://instagram.com/${instagram}" style="text-decoration:none;"><i class="bi bi-instagram"></i><h4 style="color:var(--primary);">Instagram</h4></a>` : ''}
-        ${facebook ? `<a class="card" href="${facebook.startsWith('http') ? facebook : `https://facebook.com/${facebook}`}" style="text-decoration:none;" target="_blank"><i class="bi bi-facebook"></i><h4 style="color:var(--primary);">Facebook</h4></a>` : ''}
-        ${mapsUrl ? `<a class="card" href="${mapsUrl}" target="_blank" style="text-decoration:none;"><i class="bi bi-geo-alt"></i><h4 style="color:var(--primary);">Localização</h4></a>` : ''}
+        ${
+          whatsapp
+            ? `<a class="card" href="https://wa.me/${whatsapp}" style="text-decoration:none;"><i class="bi bi-whatsapp"></i><h4 style="color:var(--primary);">Whatsapp</h4></a>`
+            : ""
+        }
+        ${
+          instagram
+            ? `<a class="card" href="https://instagram.com/${instagram}" style="text-decoration:none;"><i class="bi bi-instagram"></i><h4 style="color:var(--primary);">Instagram</h4></a>`
+            : ""
+        }
+        ${
+          facebook
+            ? `<a class="card" href="${
+                facebook.startsWith("http")
+                  ? facebook
+                  : `https://facebook.com/${facebook}`
+              }" style="text-decoration:none;" target="_blank"><i class="bi bi-facebook"></i><h4 style="color:var(--primary);">Facebook</h4></a>`
+            : ""
+        }
+        ${
+          mapsUrl
+            ? `<a class="card" href="${mapsUrl}" target="_blank" style="text-decoration:none;"><i class="bi bi-geo-alt"></i><h4 style="color:var(--primary);">Localização</h4></a>`
+            : ""
+        }
       </div>
     </section>
     <section class="section">
       <h3>Horário de Funcionamento</h3>
-      <p style="text-align: center">${businessHours || 'Não informado'}</p>
+      <p style="text-align: center">${businessHours || "Não informado"}</p>
     </section>
     <section class="section">
       <div class="adsense-container">
