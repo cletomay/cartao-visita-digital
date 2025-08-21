@@ -266,7 +266,8 @@ function renderTemplate({
       }</p>
     </section>
 
-     <section class="section" id="oferecemos">
+${ (off1Title || off2Title || off3Title) ? `
+    <section class="section" id="oferecemos">
       <h3>O que oferecemos</h3>
       <div class="cards" role="list">
         <div class="card" role="listitem">
@@ -283,7 +284,9 @@ function renderTemplate({
         </div>
       </div>
     </section>
+` : ''}
 
+${ (pub1Title || pub2Title || pub3Title) ? `
     <section class="section" id="para-quem">
       <h3>Para quem é</h3>
       <div class="cards" role="list">
@@ -301,13 +304,14 @@ function renderTemplate({
         </div>
       </div>
     </section>
+` : ''}
     
      <section class="section">
       <h3>Horário de Funcionamento</h3>
       <p style="text-align: center">${businessHours || "Não informado"}</p>
     </section>
     
-    <section class="section">
+  <section class="section">
       <h3>Fotos do Local</h3>
       <div class="photos">
         <div class="photo"><img src="${

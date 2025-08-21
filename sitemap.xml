@@ -210,4 +210,10 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://www.cartao-visita-digital.com/ki-loj-o-floripa/</loc>
+        <lastmod>2025-08-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
