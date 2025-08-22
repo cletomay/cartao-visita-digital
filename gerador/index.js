@@ -311,6 +311,7 @@ ${ (pub1Title || pub2Title || pub3Title) ? `
       <p style="text-align: center">${businessHours || "Não informado"}</p>
     </section>
     
+${ (imagens.img1 || imagens.img2 || imagens.img3) ? `
   <section class="section">
       <h3>Fotos do Local</h3>
       <div class="photos">
@@ -325,6 +326,7 @@ ${ (pub1Title || pub2Title || pub3Title) ? `
         }" alt="Foto 3" onclick="openModal(this.src)" /></div>
       </div>
     </section>
+` : ''}
     
     <section class="section">
       <h3>Contato</h3>
