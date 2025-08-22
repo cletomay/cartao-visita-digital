@@ -1,0 +1,9 @@
+Preciso que voce faça uma descrição bem bacana e resumida para hero de uma landing page da: Padarias Curitiba
+
+Além disso gere 3 topicos de "O que oferecemos" no seguinte formato: Titulo - Descrição
+Exemplo:
+Padaria - Pães artesanais, bolos, salgados e muito mais.
+
+Além disso gere 3 topicos de "Para quem é" no seguinte formato: Titulo - Descrição
+Exemplo:
+Famílias - Ambiente acolhedor para todas as idades.
