@@ -137,7 +137,7 @@ app.post(
     const sitemapPath = path.join(__dirname, "..", "sitemap.xml");
     let sitemapContent = fs.readFileSync(sitemapPath, "utf8");
     const urlName = nome.replace(/[^a-zA-Z0-9-_]/g, "-").toLowerCase();
-    const newUrl = `    <url>\n        <loc>https://www.cartao-visita-digital.com/${urlName}/</loc>\n        <lastmod>${new Date()
+    const newUrl = `    <url>\n        <loc>https://www.cartaovisitadigital.com/${urlName}/</loc>\n        <lastmod>${new Date()
       .toISOString()
       .slice(
         0,
