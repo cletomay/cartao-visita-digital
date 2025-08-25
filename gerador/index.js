@@ -169,6 +169,42 @@ function renderTemplate({
   publico2 = "",
   publico3 = "",
 }) {
+  function buildSameAs({ mapsUrl, instagram, whatsapp, facebook }) {
+  const links = [];
+
+  if (mapsUrl) {
+    links.push(mapsUrl);
+  }
+
+  if (instagram) {
+    // Garante que já é URL ou monta
+    links.push(
+      instagram.startsWith("http")
+        ? instagram
+        : `https://instagram.com/${instagram.replace(/^@/, "")}`
+    );
+  }
+
+  if (whatsapp) {
+    // Remove caracteres não numéricos, para não quebrar o wa.me
+    const cleanPhone = whatsapp.replace(/\D/g, "");
+    if (cleanPhone) {
+      links.push(`https://wa.me/${cleanPhone}`);
+    }
+  }
+
+  if (facebook) {
+    links.push(
+      facebook.startsWith("http")
+        ? facebook
+        : `https://facebook.com/${facebook.replace(/^@/, "")}`
+    );
+  }
+
+  return links;
+}
+
+
   function splitPair(text) {
     if (!text) return ["", ""];
     // aceita hífen normal e variações de dash
@@ -183,6 +219,73 @@ function renderTemplate({
     return [title, desc];
   }
 
+  function parseBusinessHours(businessHours) {
+  if (!businessHours) return null;
+
+  const diasMap = {
+    seg: "Mo",
+    segunda: "Mo",
+    ter: "Tu",
+    terça: "Tu",
+    terca: "Tu",
+    qua: "We",
+    quarta: "We",
+    qui: "Th",
+    quinta: "Th",
+    sex: "Fr",
+    sexta: "Fr",
+    sab: "Sa",
+    sábado: "Sa",
+    sabado: "Sa",
+    dom: "Su",
+    domingo: "Su"
+  };
+
+  try {
+    const blocks = businessHours.split("|"); // separa "Seg a Ter e Qui a Dom: 18h–23h"  | "Qua: Fechado"
+    let result = [];
+
+    for (const block of blocks) {
+      const lower = block.toLowerCase().trim();
+
+      // captura horário (pode ter hífen normal ou "–")
+      const horasMatch = lower.match(/(\d{1,2})h.*?(\d{1,2})h/);
+      const horas = horasMatch
+        ? [
+            horasMatch[1].padStart(2, "0") + ":00",
+            horasMatch[2].padStart(2, "0") + ":00"
+          ]
+        : null;
+
+      // captura dias (aceita "Seg a Ter", "Qui a Dom", ou "Qua")
+      const diasMatch = lower.match(
+        /(seg|segunda|ter|terça|terca|qua|quarta|qui|quinta|sex|sexta|sab|sábado|sabado|dom|domingo)(\s*a\s*(seg|segunda|ter|terça|terca|qua|quarta|qui|quinta|sex|sexta|sab|sábado|sabado|dom|domingo))?/g
+      );
+
+      if (!diasMatch) continue;
+
+      for (const d of diasMatch) {
+        const parts = d.split("a").map(x => x.trim());
+        const d1 = diasMap[parts[0]];
+        const d2 = parts[1] ? diasMap[parts[1]] : null;
+
+        if (lower.includes("fechado")) {
+          // marca como fechado
+          result.push(`${d1}${d2 ? "-" + d2 : ""} Closed`);
+        } else if (horas) {
+          result.push(
+            `${d1}${d2 ? "-" + d2 : ""} ${horas[0]}-${horas[1]}`
+          );
+        }
+      }
+    }
+
+    return result.length > 0 ? result : null;
+  } catch (e) {
+    return null;
+  }
+}
+
   const [off1Title, off1Desc] = splitPair(oferecemos1);
   const [off2Title, off2Desc] = splitPair(oferecemos2);
   const [off3Title, off3Desc] = splitPair(oferecemos3);
@@ -190,6 +293,7 @@ function renderTemplate({
   const [pub1Title, pub1Desc] = splitPair(publico1);
   const [pub2Title, pub2Desc] = splitPair(publico2);
   const [pub3Title, pub3Desc] = splitPair(publico3);
+  const parsedHours = parseBusinessHours(businessHours);
 
   return `<!DOCTYPE html>
 <html lang="pt-br">
@@ -207,7 +311,49 @@ function renderTemplate({
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
     <title>${nome}</title>
+    <meta name="description" content="${descricao.replace(/"/g, '&quot;')}" />
+    <link rel="canonical" href="https://www.cartaovisitadigital.com/${nome.replace(/[^a-zA-Z0-9-_]/g, "-").toLowerCase()}/" />
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:title" content="${nome}" />
+    <meta property="og:description" content="${descricao.replace(/"/g, '&quot;')}" />
+    <meta property="og:image" content="${imagens.profile}" />
+    <meta property="og:url" content="https://www.cartaovisitadigital.com/${nome.replace(/[^a-zA-Z0-9-_]/g, "-").toLowerCase()}/" />
+    <meta property="og:type" content="website" />
+  
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${nome}" />
+    <meta name="twitter:description" content="${descricao.replace(/"/g, '&quot;')}" />
+    <meta name="twitter:image" content="${imagens.profile}" />
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "${nome}",
+      "description": "${descricao.replace(/"/g, '\\"')}",
+      "image": "${imagens.profile}",
+      "url": "https://www.cartaovisitadigital.com/${nome.replace(/[^a-zA-Z0-9-_]/g, "-").toLowerCase()}/",
+      "telephone": "${whatsapp || ''}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "${endereco || ''}",
+        "addressCountry": "BR"
+      },
+      "openingHours": ${parsedHours ? JSON.stringify(parsedHours) : '""'},
+      "hasMap": "${mapsUrl || ''}",
+      "sameAs": ${JSON.stringify(
+        buildSameAs({ mapsUrl, instagram, whatsapp, facebook })
+      )}
+    }
+    </script>
+
+  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
     <style>
